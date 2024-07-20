@@ -1,0 +1,68 @@
+---
+layout: post
+title: "实有理函数不定积分 "
+date: 2021-04-1 10:03:11 +0800
+categories: 数学
+---
+
+<h3>定义</h3>
+
+<p><strong>有理函数</strong>指两个实多项式函数的<strong>商</strong>表示的函数．在<strong>实数域</strong>中，有理函数形如</p>
+
+<p>$ R \left( x \right) = \dfrac{ P \left( x \right) }{ Q \left( x \right) } = \dfrac { \alpha_{n}x^{n} + \alpha_{n-1}x^{n-1} + \ldots&nbsp;+ \alpha_{1}x + \alpha_{0} }{ \beta_{m}x^{m} + \beta_{m-1}x^{m-1} + \ldots&nbsp;+ \beta_{1}x + \beta_{0} } $，</p>
+
+<p>其中 $ \alpha, \beta \in \mathbb{R} $，$ m, n \in \mathbb{N} $，并且$ \alpha_{n}, \beta_{m} \neq 0 $．</p>
+
+<p>ps: 注意到这里的 $ \alpha, \beta $ 是实系数，因此该多项式仍然在实数域中（即可以是无理数）．“有理函数”中的“有理”强调<strong>多项式分数</strong>这种形式，因而，不管在整数环、实数域还是复数域中，都可以产生有理函数．</p>
+
+<hr class="wp-block-separator"/>
+
+<h3>粗分：加法式</h3>
+
+<p>实多项式的性质使得 $ Q \left( x \right) $ 可以被唯一、两两互素地分解为</p>
+
+<p>$ Q \left( x \right) = \left( x-a_{1} \right) ^{ \lambda _{1} } \, \left( x-a_{2} \right) ^{ \lambda _{2} } \ldots \, \left( x-a_{s} \right) ^{ \lambda _{s} } \, \left( x^{2} + p_{1}x + q_{1} \right) ^{ \mu _{1} } \, \left( x^{2} + p_{2}x + q_{2} \right) ^{ \mu _{2} } \ldots \, \left( x^{2} + p_{t}x + q_{t} \right) ^{ \mu _{t} } $</p>
+
+<p>的形式，不妨记为</p>
+
+<p>$ Q \left( x \right) = Q\!A_{1}^{ \lambda _{1} } \left( x \right) \ldots Q\!A_{s}^{ \lambda _{s} } \left( x \right) \, Q\!B_{1}^{ \mu _{1} } \left( x \right) \ldots Q\!B_{t}^{ \mu _{t} } \left( x \right) $．</p>
+
+<p>而 $ R \left( x \right) = \dfrac{ P \left( x \right) }{ Q \left( x \right) } $ 根据<strong>部分分式分解性质</strong>，它可以再分为形如</p>
+
+<p>$ R \left( x \right) = \dfrac{ P \left( x \right) }{ Q \left( x \right) } = \dfrac{ P_{1} \left( x \right) }{ Q\!A_{1}^{ \lambda _{1} } \left( x \right) } + \dfrac{ P_{2} \left( x \right) }{ Q\!A_{2}^{ \lambda _{2} } \left( x \right) } + \ldots + \dfrac{ P_{s+t} \left( x \right) }{ Q\!B_{t}^{ \mu _{t} } \left( x \right) } $</p>
+
+<p>的分式之和．</p>
+
+<hr class="wp-block-separator"/>
+
+<h3>细分：可积加法式</h3>
+
+<p>我们分别考察 $ \dfrac{ P_{u} \left( x \right) }{ Q\!A^{\lambda} } $ 和 $ \dfrac{ P_{v} \left( x \right) }{ Q\!B^{\mu} } $ 的性质．</p>
+
+<p>对于 $ \dfrac{P_{u} \left( x \right)}{Q \! A_{i}^{\lambda_{i}} \left( x \right)} $，有</p>
+
+<p>$ \displaystyle \dfrac{P_{u} \left( x \right)}{Q \! A_{i}^{\lambda_{i}} \left( x \right)} = \dfrac{P_{u} \left( x \right)}{\left( x-a_{i} \right)^{\lambda_{i}}} = \dfrac{C_{1}}{\left( x-a_{i} \right)} + \dfrac{C_{2}}{\left( x-a_{i} \right)^{2}} + \ldots + \dfrac{C_{\lambda_{i}}}{\left( x-a_{i} \right)^{\lambda_{i}}} $，</p>
+
+<p>其中 $ C_{i} $ 为常数；</p>
+
+<p>对于 $ \dfrac{P_{v} \left( x \right)}{Q \! B_{i}^{\mu_{i}} \left( x \right)} $，也有</p>
+
+<p>$ \displaystyle \dfrac{P_{v} \left( x \right)}{Q \! B_{i}^{\mu_{i}} \left( x \right)} = \dfrac{P_{v} \left( x \right)}{\left( x^{2} + p_{i} x + q_{i} \right)^{\mu_{i}}} = \dfrac{D_{1} x + E_{1}}{\left( x^{2} + p_{i} x + q_{i} \right)} + \dfrac{D_{2} x + E_{2}}{\left( x^{2} + p_{i} x + q_{i} \right)^{2}} + \ldots + \dfrac{D_{\mu_{i}} x + E_{\mu_{i}}}{\left( x^{2} + p_{i} x + q_{i} \right)^{\mu_{i}}} $，</p>
+
+<p>其中 $ D_{i}, E_{i} $ 为常数．</p>
+
+<p>此时我们得到了一个完全由 $ \dfrac{C}{\left(x-a\right)^{\lambda}} $ 和 $ \dfrac{Dx+E}{\left(x^{2}+px+q\right)^{\mu}} $ 构成的加法式．</p>
+
+<hr class="wp-block-separator"/>
+
+<h3>不定积分</h3>
+
+<p>最终，只需要利用以下两种不定积分：</p>
+
+<p>$ \displaystyle\int\dfrac{ {\rm d}x}{\left(x-a\right)^{k}}=\begin{cases}\ln\left|x-a\right|+C,\quad k=1，\\ \\ \dfrac{1}{\left(1-k\right)\left(x-a\right)^{k-1}}+C,\quad k&gt;1；\end{cases} $</p>
+
+<p>$ \displaystyle\int\dfrac{Ax+B}{\left(x^{2}+px+q\right)^{k}}{\rm d}x=\begin{cases}\dfrac{A}{2}\ln\left(t^{2}+r^{2}\right)+\left(B-\dfrac{p}{2}A\right)\,\dfrac{1}{r}{\rm arctan}\,\dfrac{t}{r}+C,\quad k=1，\\ \\ \dfrac{A}{2\left(1-k\right)\left(t^{2}+r^{2}\right)^{k-1}}+\left(B-\dfrac{p}{2}A\right)\displaystyle\int\dfrac{ {\rm d}t}{\left(t^{2}+r^{2}\right)^{k}},\quad k&gt;1，\end{cases}$</p>
+
+<p>其中 $ t=x+\dfrac{p}{2},\; r^{2}=q-\dfrac{p^{2}}{4} $，并且 $ \displaystyle\int\dfrac{ {\rm d}t}{\left(t^{2}+r^{2}\right)^{k}}=I_{k}=\dfrac{t}{2r^{2}\left(k-1\right)\left(t^{2}+r^{2}\right)^{k-1}}+\dfrac{2k-3}{2r^{2}\left(k-1\right)}I_{k-1},\quad k&gt;1 $．</p>
+
+<p>理论上，我们就能得到一切实有理函数的不定积分了．</p>
