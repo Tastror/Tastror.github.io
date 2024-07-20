@@ -1,11 +1,12 @@
 ---
 permalink: /search.json
 ---
+{%- assign date_format = "%Y.%-m.%-d %A" -%}
 [
   {% for post in site.posts %}{
     "title": "{{ post.title | escape }}",
     "url": "{{ site.baseurl }}{{ post.url }}",
     "categories": "{{ post.categories }}",
-    "date" : "{{ post.date }}"
+    "date" : "{{ post.date | date: date_format }}"
   }{% unless forloop.last %},{% endunless %}{% endfor %}
 ]

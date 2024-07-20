@@ -11,11 +11,13 @@ show_title: true
         {%- capture category_name -%}{{ category | first }}{%- endcapture -%}
         <div id="#{{ category_name | slugize }}"></div>
         <p></p>
-        <h3 class="category-head">{{ category_name }} ({{site.categories[category_name].size()}})</h3>
+        <h3 class="category-head">{{ category_name }} <span style="font-size:medium;">(共{{site.categories[category_name].size()}}条)</span></h3>
         <a name="{{ category_name | slugize }}"></a>
         {%- for post in site.categories[category_name] -%}
         <article class="archive-item">
-          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         </article>
         {%- endfor -%}
       </div>
