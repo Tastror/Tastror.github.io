@@ -8,8 +8,7 @@ show_title: false
 <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
 
 
-<input type="text" id="search-input" placeholder="搜索 - 标题 / 相关内容 / 日期" style="text-indent:1rem;width:100%;height:3rem;"
-oninput="SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('results-container'), json: '{{ site.baseurl }}/search.json', searchResultTemplate: '<li><span class=&quot;post-meta&quot;>{categories}</span> <span class=&quot;post-meta&quot;>{date}</span><a class=&quot;post-link&quot; href=&quot;{url}&quot; title=&quot;{desc}&quot;>{title}</a></li>', noResultsText: '没有搜索到文章', limit: 20, fuzzy: false})"/>
+<input type="text" class="search-input" id="search-input" placeholder="搜索 - 标题 / 相关内容 / 日期" oninput="SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('results-container'), json: '{{ site.baseurl }}/search.json', searchResultTemplate: '<li><span class=&quot;post-meta&quot;>{categories}</span> <span class=&quot;post-meta&quot;>{date}</span><a class=&quot;post-link&quot; href=&quot;{url}&quot; title=&quot;{desc}&quot;>{title}</a></li>', noResultsText: '没有搜索到文章', limit: 20, fuzzy: false})"/>
 <br/>
 <br/>
 <ul class="post-list" id="results-container"></ul>

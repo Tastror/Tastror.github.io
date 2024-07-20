@@ -228,6 +228,9 @@ $border-color-01: $lm-border-color-01;
 $border-color-02: $lm-border-color-02;
 $border-color-03: $lm-border-color-03;
 
+$box-color-01: $lm-text-color;
+$shadow-color-01: $lm-brand-color;
+
 $table-text-color: $lm-table-text-color;
 $table-zebra-color: $lm-table-zebra-color;
 $table-header-bg-color: $lm-table-header-bg-color;
@@ -258,6 +261,9 @@ $table-border-color: $lm-table-border-color;
     --minima-border-color-02: #{$lm-border-color-02};
     --minima-border-color-03: #{$lm-border-color-03};
 
+    --minima-box-color-01: #{$lm-text-color};
+    --minima-shadow-color-01: #{$lm-brand-color};
+
     --minima-table-text-color: #{$lm-table-text-color};
     --minima-table-zebra-color: #{$lm-table-zebra-color};
     --minima-table-header-bg-color: #{$lm-table-header-bg-color};
@@ -287,6 +293,9 @@ $table-border-color: $lm-table-border-color;
       --minima-border-color-02: #{$dm-border-color-02};
       --minima-border-color-03: #{$dm-border-color-03};
 
+      --minima-box-color-01: #{$dm-text-color};
+      --minima-shadow-color-01: #{$dm-brand-color};
+
       --minima-table-text-color: #{$dm-table-text-color};
       --minima-table-zebra-color: #{$dm-table-zebra-color};
       --minima-table-header-bg-color: #{$dm-table-header-bg-color};
@@ -314,6 +323,9 @@ $table-border-color: $lm-table-border-color;
   $border-color-01: var(--minima-border-color-01);
   $border-color-02: var(--minima-border-color-02);
   $border-color-03: var(--minima-border-color-03);
+
+  $box-color-01: var(--minima-box-color-01);
+  $shadow-color-01: var(--minima-shadow-color-01);
 
   $table-text-color: var(--minima-table-text-color);
   $table-zebra-color: var(--minima-table-zebra-color);
@@ -343,6 +355,9 @@ $table-border-color: $lm-table-border-color;
   $border-color-01: $dm-border-color-01;
   $border-color-02: $dm-border-color-02;
   $border-color-03: $dm-border-color-03;
+
+  $box-color-01: $dm-text-color;
+  $shadow-color-01: $dm-brand-color;
 
   $table-text-color: $dm-table-text-color;
   $table-zebra-color: $dm-table-zebra-color;

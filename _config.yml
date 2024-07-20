@@ -9,6 +9,7 @@ title: Tastror's blog
 author:
   name: Tastror
   email: tastror@gmail.com
+  github: https://github.com/Tastror
 
 # yaml 中的 [|>][+-]
 # |> 分别表示是否保留中间的换行符
@@ -52,7 +53,7 @@ minima:
   # solarized-light	   Light variant of solarized color scheme.
   # solarized-dark	   Dark variant of solarized color scheme.
   # solarized	         Adaptive skin for solarized color scheme skins.
-  skin: classic
+  skin: auto
   
   # Minima date format.
   # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
