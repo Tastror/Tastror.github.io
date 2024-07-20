@@ -224,9 +224,9 @@
 
 .post-single {
   border: 0.05rem solid $box-color-01;
-  border-radius: 0.4rem;
+  border-radius: 1rem;
   box-shadow: 0 0 0.1rem $shadow-color-01;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem 1.5rem;
 }
 
 .left-and-right {
@@ -250,7 +250,7 @@
 
 .post-divide-line {
   border-top: 1px solid $border-color-01;
-  margin: 1rem 0;
+  margin: 1rem 0 1.5rem;
 }
 
 .post-no-bottom {
@@ -342,6 +342,7 @@
   width: 100%;
   height: 3rem;
   padding: 1em;
+  border: solid;
   box-sizing: border-box;
   background-color: $background-color;
   border-color: $box-color-01;
