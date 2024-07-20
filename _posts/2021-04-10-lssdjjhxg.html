@@ -1,0 +1,110 @@
+---
+layout: post
+title: "离散上的卷积与相关"
+date: 2021-04-10 10:03:11 +0800
+categories: 计算机
+---
+
+<h2>约定记号</h2>
+
+<p>首先，我们生成一个序列，比如 $ [3,5,1,7,9] $，命名为 $ a $，记作 $ a=[3,5,1,7,9] $．并且记 $ a $ 序列中这五个数的下标分别为 $ 0,1,2,3,4 $，即 $ a_0=3,\; a_1=5,\; a_2=1,\; a_3=7,\; a_4=9 $．此时我们可以定义一种<strong>将 $ a $ 的下标视为原像，序列的值视为像的</strong>离散函数，也记作 $ a $．即，$ a(0)=3,\; a(1)=5,\; a(2)=1,\; a(3)=7,\; a(4)=9 $，我们将这种离散函数简记作 $ a=[3_A,5,1,7,9] $．其中，$ A $ 代指锚 $ (anchor) $，用以标记原像为 $ 0 $ 的点．不作标注时一般指第一个数原像为 $ 0 $．约定下标总是连续的整数．</p>
+
+<p>[admonition color="red"]该约定仅为方便理解，并不作为流行标准使用．[/admonition]</p>
+
+<p><br></p>
+
+<h2>离散卷积</h2>
+
+<p>对于两个离散函数 $ a=[x_{0_{A}},x_1,x_2,\cdots ,x_m] $ 和 $ b=[y_{0_{A}},y_1,y_2,\cdots ,y_n] $，定义<strong><span style="text-decoration: underline;">卷积</span></strong> $ \ast $，</p>
+
+<p class="has-text-align-center">$ c=a\ast b $</p>
+
+<p>表示</p>
+
+<p class="has-text-align-center">$ \displaystyle c(i+j)=\sum_{0\leqslant i\leqslant m,\, 0\leqslant j\leqslant n}a(i)\times b(j) $．</p>
+
+<p>还有一种左侧只有一个元的表示</p>
+
+<p class="has-text-align-center">$ \displaystyle c(i)=\sum_{0\leqslant j\leqslant m,\, 0\leqslant i-j\leqslant n}a(j)\times b(i-j) $，</p>
+
+<p>和前者是完全一样的．</p>
+
+<blockquote class="wp-block-quote"><p><strong>实例</strong></p><p>取 $ a=[3_A,5,1,7,9] $，$ b=[2_A,6,4] $，则 $ c=a\ast b $ 中，<br>$ c(0)=a(0)\times b(0)=3\times 2=6 $，<br>$ c(1)=a(0)\times b(1)+a(1)\times b(0)=3\times 6+5\times 2=28 $，<br>$ c(2)=a(0)\times b(2)+a(1)\times b(1)+a(2)\times b(0)=3\times 4+5\times 6+1\times 2=44 $，<br>$ c(3)=a(1)\times b(2)+a(2)\times b(1)+a(3)\times b(0)=5\times 4+1\times 6+7\times 2=40 $，<br>$ c(4)=a(2)\times b(2)+a(3)\times b(1)+a(4)\times b(0)=1\times 4+7\times 6+9\times 2=64 $，<br>$ c(5)=a(3)\times b(2)+a(4)\times b(1)=7\times 4+9\times 6=46 $，<br>$ c(6)=a(4)\times b(2)=9\times 4=36 $，<br>于是 $ a\ast b=c=[6_A,28,44,40,64,46,36] $．</p><p>着重看中间三行，这看起来好像是用 $ b=[2_A,6,4] $ <strong>倒序遍历</strong> $ a $ 的每一个<strong>三元组</strong>，进行乘积加和．<em>而这正是很多时候我们需要的东西．</em></p></blockquote>
+
+<p>卷积有很多优秀的性质，比如</p>
+
+<p class="has-text-align-center">交换律$\;$ $ a\ast b = b\ast a $，<br>结合律$\;$ $ a\ast(b\ast c)=(a\ast b)\ast c $，<br>对加法的分配律$\;$ $ a+(b\ast c)=(a\ast b)+(a\ast c) $，</p>
+
+<p>这些都是很容易证明的．</p>
+
+<p><br></p>
+
+<h4>引申：连续卷积</h4>
+
+<p>这里仅给出函数式</p>
+
+<p>$$ \displaystyle h(x)=\int_{-\infty}^{+\infty}f\left(\tau\right)g\left(x-\tau\right)\,{\rm d}\tau, $$</p>
+
+<p>它是一种反常积分，可以分步求解．这里的 $ x $ 类似于上面的原像（下标），$ f(x),g(x),h(x) $ 则是 $ x $ 下的像．</p>
+
+<p><br></p>
+
+<h4>引申：狄利克雷卷积</h4>
+
+<p>另外，有另一种数论上的卷积叫做<a href="https://oi-wiki.org/math/mobius/#dirichlet" target="_blank" rel="noreferrer noopener">狄利克雷卷积</a>（链接来自 oi-wiki），它也是离散的卷积 QwQ．</p>
+
+<p><br></p>
+
+<h2>离散相关</h2>
+
+<p>我们发现卷积的遍历是倒序的，于是自然会想到正序的遍历．相关便是一种．仍然是两个离散函数 $a=[x_0,x_1,x_2,\cdots ,x_m] $ 和 $ b=[y_0,y_1,y_2,\cdots ,y_n]$，定义<strong><span style="text-decoration: underline;">相关</span></strong> $\star$，</p>
+
+<p class="has-text-align-center">$c=a\star b$，</p>
+
+<p>表示</p>
+
+<p class="has-text-align-center">$\displaystyle c(i-j)=\sum_{0\leqslant i\leqslant m,\, 0\leqslant j\leqslant n}a(i)\times b(j)$．</p>
+
+<p>这里，它还有另两种形式，它们形如</p>
+
+<p class="has-text-align-center">$\displaystyle c(i)=\sum_{0\leqslant i+j\leqslant m,\, 0\leqslant j\leqslant n}a(i+j)\times b(j)$，<br>$\displaystyle c(i)=\sum_{0\leqslant j\leqslant m,\, 0\leqslant j-i\leqslant n}a(j)\times b(j-i)$．</p>
+
+<blockquote class="wp-block-quote"><p><strong>实例，第二回</strong></p><p>仍然取 $a=[3_A,5,1,7,9]$，$b=[2_A,6,4]$，若 $c=a\star b$，则有，<br>$c(-2)=a(0)\times b(2)=3\times 4=12$，<br>$c(-1)=a(0)\times b(1)+a(1)\times b(2)=3\times 6+5\times 4=38$，<br>$c(0)=a(0)\times b(0)+a(1)\times b(1)+a(2)\times b(2)=3\times 2+5\times 6+1\times 4=40$，<br>$c(1)=a(1)\times b(0)+a(2)\times b(1)+a(3)\times b(2)=5\times 2+1\times 6+7\times 4=44$，<br>$c(2)=a(2)\times b(0)+a(3)\times b(1)+a(4)\times b(2)=1\times 2+7\times 6+9\times 4=80$，<br>$c(3)=a(3)\times b(0)+a(4)\times b(1)=7\times 2+9\times 6=68$，<br>$c(4)=a(4)\times b(0)=9\times 2=18$，<br>于是 $a\star b=c=[12,38,40_A,44,80,68,18]$．</p><p>仍然着重看中间三行，这次是<strong>正序遍历</strong>了．</p></blockquote>
+
+<p>但是，相关并不具有卷积的那些性质，<strong>它甚至不具有交换性</strong>．这也导致了我们很多时候宁可颠倒一下使用卷积，也很少使用相关．</p>
+
+<p><br></p>
+
+<p>定义一个序列 $a$ 的颠倒记为 $a^R$（$A$ 的位置也跟着变动，并以 $A$ 为锚重新分配下标），显然，我们有</p>
+
+<p class="has-text-align-center">$a\ast b=a\star b^R$，</p>
+
+<p>并且，如果 $a=a^R$，不难证明，它需要满足如下三个性质：<br>$1$，$a$ 的原像有奇数个；<br>$2$，$a$ 的锚点在正中央；<br>$3$，$a$ 的像中心对称．</p>
+
+<p></p>
+
+<h4>引申：连续相关</h4>
+
+<p>同样仅给出函数式</p>
+
+<p>$$\displaystyle h(x)=\int_{-\infty}^{+\infty}f\left(\tau\right)g\left(\tau-x\right)\,{\rm d}\tau.$$</p>
+
+<p></p>
+
+<h2>应用</h2>
+
+<p>注意到，如果 $a=a^R$，那么使用 $a$ 的卷积和相关实际上是没有区别的（使用 $a$ 指 $a$ 在运算符右侧）．在向量或 $n$ 阶方阵中，一个锚在中心且中心对称的元素就满足这个性质．比如在图像处理中，使用<strong>中心对称核</strong>进行滤波时，就会采用相关（可以看成卷积）．</p>
+
+<p>以下给出一个实例．</p>
+
+<p class="has-text-align-center">$\displaystyle I=\left[ \begin{matrix} 1_A &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\ 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\ 11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 \\ 16 &amp; 17 &amp; 18 &amp; 19 &amp; 20 \\ 21 &amp; 22 &amp; 23 &amp; 24 &amp; 25 \end{matrix} \right]$，</p>
+
+<p class="has-text-align-center">$\displaystyle C=\left[ \begin{matrix} 0.027 &amp; 0.110 &amp; 0.027 \\ 0.110 &amp; 0.443_A &amp; 0.110 \\ 0.027 &amp; 0.110 &amp; 0.027 \end{matrix} \right]$，</p>
+
+<p>其中 $I$ 是图像，$C$ 是滤波所用的核（$\sigma=0.6$ 的三阶高斯滤波）．那么</p>
+
+<p class="has-text-align-center">$\displaystyle I\star C=I\ast C^R=I\ast C=\left[ \begin{matrix} x_A &amp; x &amp; x &amp; x &amp; x \\ x &amp; 6.937 &amp; 7.928 &amp; 8.919 &amp; x \\ x &amp; 11.892 &amp; 12.883 &amp; 13.874 &amp; x \\ x &amp; 16.847 &amp; 17.838 &amp; 18.829 &amp; x \\ x &amp; x &amp; x &amp; x &amp; x \end{matrix} \right]$，</p>
+
+<p>这里 $x$ 是边框值，暂不考虑．<br>它是一个让图像变模糊（和周围更接近）的滤波．</p>
+
+<p>而在计算梯度时，由于核不再中心对称（如 $Sobel$ 算子），有时要区别卷积和相关．这里就不举例了．</p>
