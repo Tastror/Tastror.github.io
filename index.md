@@ -7,4 +7,5 @@
 #
 layout: home
 title: Home
+show_title: false
 ---
