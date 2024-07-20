@@ -119,7 +119,7 @@ jekyll new <any-name>
 
 接着复制到 github.io 文件夹。或者直接搜索一个好用的库然后 clone（这里由于 favicon 的问题，我选择直接使用 minima 原仓库）
 
-当然，google-protobuf 的 Gemfile 也要改成这样
+当然，为了方便 bundler 的安装，google-protobuf 的 Gemfile 也可以改成这样
 
 ```gemfile
 source 'https://rubygems.org'
@@ -132,7 +132,7 @@ gem 'webrick', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 ```
 
-当然，这里你可以采用其他主题。
+这里你也可以采用其他主题。
 
 ## 四、撰写博客
 
