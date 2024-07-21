@@ -7,7 +7,7 @@ categories: 计算机
 
 > 转自本人知乎回答 [Python的变量名为什么区分大小写，但不区分全半角？](https://www.zhihu.com/question/596405042/answer/3568948103)
 
-在使用诸如 print(__name__) 时，ｐｒｉｎｔ(__ｎａｍｅ__) 也能得到完全一样的结果。
+在使用诸如 print(\_\_name\_\_) 时，ｐｒｉｎｔ(\_\_ｎａｍｅ\_\_) 也能得到完全一样的结果。
 
 <p align="center"><img src="{{site.base_url}}/image/2024.7.21.whyp.1.png"/></p>
 <p align="center">两者结果相同</p>
