@@ -6,9 +6,32 @@ show_title: false
 ---
 
 <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+<script>
 
+window.onload = function() {
+    document.getElementById('search-input').focus();
+}
 
-<input type="text" class="search-input" id="search-input" placeholder="搜索 - 标题 / 相关内容 / 日期" oninput="SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('results-container'), json: '{{ site.baseurl }}/search.json', searchResultTemplate: '<li><span class=&quot;post-meta&quot;>{categories}</span> <span class=&quot;post-meta&quot;>{date}</span><a class=&quot;post-link&quot; href=&quot;{url}&quot; title=&quot;{desc}&quot;>{title}</a></li>', noResultsText: '没有搜索到文章', limit: 20, fuzzy: false})"/>
+function sjs() {
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/search.json',
+        searchResultTemplate:
+            `<li> 
+                <span class="post-meta">{categories}</span>
+                <span class="post-meta">{date}</span>
+                <a class="post-link" href="{url}" title="{desc}">{title}</a>
+            </li>`,
+        noResultsText: '没有搜索到文章',
+        limit: 20,
+        fuzzy: false
+    });
+
+}
+</script>
+
+<input type="text" class="search-input" id="search-input" placeholder="搜索 - 标题 / 相关内容 / 日期" oninput="sjs();"/>
 <br/>
 <br/>
 <ul class="post-list" id="results-container"></ul>

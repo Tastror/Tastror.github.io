@@ -28,6 +28,12 @@ $lm-border-color-01:       $lm-brand-color-light !default;
 $lm-border-color-02:       lighten($lm-brand-color, 35%) !default;
 $lm-border-color-03:       $lm-brand-color-dark !default;
 
+// colors for boxes
+$lm-box-color-01: #111111 !default;
+$lm-box-color-02: #d0d7de !default;
+$lm-shadow-color-01: #111111 !default;
+$lm-shadow-color-02: #d0d7de !default;
+
 $lm-table-text-color:      lighten($lm-text-color, 18%) !default;
 $lm-table-zebra-color:     lighten($lm-brand-color, 46%) !default;
 $lm-table-header-bg-color: lighten($lm-brand-color, 43%) !default;
@@ -123,6 +129,12 @@ $dm-link-hover-color:      $dm-text-color !default;
 $dm-border-color-01:       $dm-brand-color-dark !default;
 $dm-border-color-02:       $dm-brand-color-light !default;
 $dm-border-color-03:       $dm-brand-color !default;
+
+// colors for boxes
+$dm-box-color-01: #828282 !default;
+$dm-box-color-02: #30363d !default;
+$dm-shadow-color-01: #828282 !default;
+$dm-shadow-color-02: #30363d !default;
 
 $dm-table-text-color:      $dm-text-color !default;
 $dm-table-zebra-color:     lighten($dm-background-color, 4%) !default;
@@ -228,8 +240,11 @@ $border-color-01: $lm-border-color-01;
 $border-color-02: $lm-border-color-02;
 $border-color-03: $lm-border-color-03;
 
-$box-color-01: $lm-text-color;
-$shadow-color-01: $lm-brand-color;
+// (1) skin: classic (a.k.a light)
+$box-color-01: $lm-box-color-01;
+$box-color-02: $lm-box-color-02;
+$shadow-color-01: $lm-shadow-color-01;
+$shadow-color-02: $lm-shadow-color-02;
 
 $table-text-color: $lm-table-text-color;
 $table-zebra-color: $lm-table-zebra-color;
@@ -261,8 +276,11 @@ $table-border-color: $lm-table-border-color;
     --minima-border-color-02: #{$lm-border-color-02};
     --minima-border-color-03: #{$lm-border-color-03};
 
-    --minima-box-color-01: #{$lm-text-color};
-    --minima-shadow-color-01: #{$lm-brand-color};
+    // (2) skin: auto.light
+    --minima-box-color-01: #{$lm-box-color-01};
+    --minima-box-color-02: #{$lm-box-color-02};
+    --minima-shadow-color-01: #{$lm-shadow-color-01};
+    --minima-shadow-color-02: #{$lm-shadow-color-02};
 
     --minima-table-text-color: #{$lm-table-text-color};
     --minima-table-zebra-color: #{$lm-table-zebra-color};
@@ -293,8 +311,11 @@ $table-border-color: $lm-table-border-color;
       --minima-border-color-02: #{$dm-border-color-02};
       --minima-border-color-03: #{$dm-border-color-03};
 
-      --minima-box-color-01: #{$dm-text-color};
-      --minima-shadow-color-01: #{$dm-brand-color};
+      // (2) skin: auto.dark
+      --minima-box-color-01: #{$dm-box-color-01};
+      --minima-box-color-02: #{$dm-box-color-02};
+      --minima-shadow-color-01: #{$dm-shadow-color-01};
+      --minima-shadow-color-02: #{$dm-shadow-color-02};
 
       --minima-table-text-color: #{$dm-table-text-color};
       --minima-table-zebra-color: #{$dm-table-zebra-color};
@@ -324,8 +345,11 @@ $table-border-color: $lm-table-border-color;
   $border-color-02: var(--minima-border-color-02);
   $border-color-03: var(--minima-border-color-03);
 
+  // (2) skin: auto: var value assign
   $box-color-01: var(--minima-box-color-01);
+  $box-color-02: var(--minima-box-color-02);
   $shadow-color-01: var(--minima-shadow-color-01);
+  $shadow-color-02: var(--minima-shadow-color-02);
 
   $table-text-color: var(--minima-table-text-color);
   $table-zebra-color: var(--minima-table-zebra-color);
@@ -356,8 +380,11 @@ $table-border-color: $lm-table-border-color;
   $border-color-02: $dm-border-color-02;
   $border-color-03: $dm-border-color-03;
 
-  $box-color-01: $dm-text-color;
-  $shadow-color-01: $dm-brand-color;
+  // (3) skin: dark
+  $box-color-01: $dm-box-color-01;
+  $box-color-02: $dm-box-color-02;
+  $shadow-color-01: $dm-shadow-color-01;
+  $shadow-color-02: $dm-shadow-color-02;
 
   $table-text-color: $dm-table-text-color;
   $table-zebra-color: $dm-table-zebra-color;

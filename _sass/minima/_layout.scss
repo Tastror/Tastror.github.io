@@ -223,10 +223,13 @@
 }
 
 .post-single {
-  border: 0.05rem solid $box-color-01;
-  border-radius: 1rem;
-  box-shadow: 0 0 0.1rem $shadow-color-01;
+  pointer-events: none;
+  border: thin solid $box-color-02;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.1rem $shadow-color-02;
   padding: 1rem 2rem 1.5rem;
+  & a { pointer-events: auto; };
+  &:hover { border-color: $box-color-01; };
 }
 
 .left-and-right {
@@ -342,14 +345,16 @@
   width: 100%;
   height: 3rem;
   padding: 1em;
-  border: solid;
+  border: thick solid;
   box-sizing: border-box;
   background-color: $background-color;
-  border-color: $box-color-01;
+  border-color: $box-color-02;
   border-radius: 0.5rem;
   border-width: 0.1rem;
   color: $text-color;
+  font-size: $small-font-size;
   outline: none;
+  &:focus { border-color: $box-color-01; }
 }
 
 
