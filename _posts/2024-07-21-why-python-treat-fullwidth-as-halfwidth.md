@@ -9,8 +9,8 @@ categories: 计算机
 
 在使用诸如 print(__name__) 时，ｐｒｉｎｔ(__ｎａｍｅ__) 也能得到完全一样的结果。
 
-![print(__name__)全半角]({{site.base_url}}/image/2024.7.21.whyp.1.png)  
-两者结果相同
+<p align="center"><img src="{{site.base_url}}/image/2024.7.21.whyp.1.png"/></p>
+<p align="center">两者结果相同</p>
 
 实际上不只如此哦，在 <https://peps.python.org/pep-0672/#normalizing-identifiers> 所举的例子中，英语中有连词 ﬁ（f 和 i，但是是一个 unicode 码），也会被 python 视为和 fi 等同；xⁿ 会和 xn 等同，也就是 xⁿ = 8，则 print(xn) 也是 8。
 
@@ -20,8 +20,8 @@ NFKC 是一种将相似的变体 Unicode 字符映射到同一个字符的标准
 
 举例而言，が 在 NFC 和 NFKC 标准化后还是 が（先等价化拆分，后组合）；而在 NFD 和 NFKD 下则是 か 加上浊点 ◌゙（直接等价化拆分）。而 K（Compatibility）则额外加入了更多兼容性映射，诸如全角半角和合并，上下标合并，连字视为独立字等，但并不包含大小写合并（因为“外观”上并不更相似），这也回答了题主的问题。
 
-![NFC 和 NFD 的对比]({{site.base_url}}/image/2024.7.21.whyp.2.png)  
-NFC 和 NFD 的对比
+<p align="center"><img src="{{site.base_url}}/image/2024.7.21.whyp.2.png"/></p>
+<p align="center">NFC 和 NFD 的对比</p>
 
 这种方式更适合搜索引擎，文本中视觉一样的字符，在搜索时也应该被同时查阅。至于 python 为什么对标识符这么做，我就不得而知了。不过这种规范化在 python 仅仅适用于标识符。将字符串视为标识符的函数（例如getattr）不会执行规范化。
 
