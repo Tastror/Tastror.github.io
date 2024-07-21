@@ -5,7 +5,7 @@ date: 2024-07-21 18:00 +0800
 categories: 计算机
 ---
 
-> 转自知乎 [Python的变量名为什么区分大小写，但不区分全半角？](https://www.zhihu.com/question/596405042/answer/3568948103)
+> 转自本人知乎回答 [Python的变量名为什么区分大小写，但不区分全半角？](https://www.zhihu.com/question/596405042/answer/3568948103)
 
 在使用诸如 print(__name__) 时，ｐｒｉｎｔ(__ｎａｍｅ__) 也能得到完全一样的结果。
 
