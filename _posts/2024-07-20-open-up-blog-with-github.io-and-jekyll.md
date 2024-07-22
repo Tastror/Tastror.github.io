@@ -19,6 +19,8 @@ categories: 操作记录
 
 ### 2.1 安装 Jekyll
 
+***注：这里是把 jekyll 装在全局，如果你仅想在 bundler 中使用，建议仅安装 bundler，然后直接像本仓库一样配置 Gemfile，然后依次运行 `bundler` 和 `bundler exec jekyll server`***
+
 Windows 安装 ruby（我使用的是 msys2，用 pacman 管理；不过直接用 winget 之类的应该更舒服）
 
 ```shell
@@ -99,8 +101,8 @@ gem install wdm -- --with-cflags=-Wno-implicit-function-declaration
 ### 2.3 Jekyll 生成与运行
 
 ```shell
-jekyll build
-jekyll serve
+jekyll build  # use <bundler exec jekyll build> if use within bundler
+jekyll serve  # include build; use <bundler exec jekyll serve> if use within bundler
 ```
 
 进 <http://localhost:4000/> 看一眼，成功。
