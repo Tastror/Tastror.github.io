@@ -19,7 +19,7 @@ categories: 计算机
 
 为什么呢？这是因为 python 的标识符采用了 Unicode 的 NFKC（Normalization Form Compatibility Composition，兼容等价分解并以标准形态组合）原则进行正规化，解析相关的 Unicode 码，两个正规化后一致的标识符，将视为同一个标识符。
 
-NFKC 是一种将相似的变体 Unicode 字符映射到同一个字符的正规化方案（例如 Å U+212B 和 Å U+00C5 均视为 Å U+00C5） ，与此类似的还有 NFC, NFD, NFKD。具体细节可以查看 [wiki：Unicode等价性](https://zh.wikipedia.org/wiki/Unicode%E7%AD%89%E5%83%B9%E6%80%A7)、官方文档<https://unicode.org/reports/tr15/>，以及 [从⽅不是方到Unicode正规化NFD, NFC, NFKD, NFKC](https://xobo.org/unicode-normalization-nfd-nfc-nfkd-nfkc/) 和 [Unicode等价性与正规化](https://medium.com/@wanxiao1994/unicode%E7%AD%89%E4%BB%B7%E6%80%A7%E4%B8%8E%E6%AD%A3%E8%A7%84%E5%8C%96-2eb50b343bc1) 这两篇博客。
+NFKC 是一种将相似的变体 Unicode 字符映射到同一个字符的正规化方案（例如 Å U+212B 和 Å U+00C5 均视为 Å U+00C5） ，与此类似的还有 NFC, NFD, NFKD。具体细节可以查看 [wiki：Unicode等价性](https://zh.wikipedia.org/wiki/Unicode%E7%AD%89%E5%83%B9%E6%80%A7)、官方文档 <https://unicode.org/reports/tr15/>，以及 [从⽅不是方到Unicode正规化NFD, NFC, NFKD, NFKC](https://xobo.org/unicode-normalization-nfd-nfc-nfkd-nfkc/) 和 [Unicode等价性与正规化](https://medium.com/@wanxiao1994/unicode%E7%AD%89%E4%BB%B7%E6%80%A7%E4%B8%8E%E6%AD%A3%E8%A7%84%E5%8C%96-2eb50b343bc1) 这两篇博客。
 
 简单来说，NF(K)C、NF(K)D 中 C 和 D 的区别是是否进行组合，例如 が 在 NFC 和 NFKC 正规化后还是 が（先等价化拆分，后组合），在 NFD 和 NFKD 下则是 か 加上浊点 ◌゙（直接等价化拆分）。
 
