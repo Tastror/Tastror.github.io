@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "计算复杂性理论笔记（一）"
+title: "计算复杂性理论（一）"
 date: 2024-12-02 14:32:15 +0800
 categories: 计算机
 ---
