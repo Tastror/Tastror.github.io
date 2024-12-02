@@ -47,7 +47,7 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 
 可以构造如下神谕图灵机 $\text{M}^\texttt{HALT}(\langle\text{T}\rangle, x)$，其中 $\text{T} \in \mathbb{TM}$，
 
-- 构造一个图灵机 $\text{D}(\omega)$，对于任何 $\omega$，$\text{D}(\omega)$ 运行 $\text{T}(x)$
+- 构造一个图灵机 $\text{D}(\omega)$，对于任何 $\omega$，$\text{D}(\omega)$ 模拟运行 $\text{T}(x)$
 - 询问神 $\langle{\text{D} }\rangle$ 是否属于 $\texttt{HALT}$
 - 如果属于，则模拟运行 $\text{T}(x)$
 - 如果不属于，则直接拒绝
