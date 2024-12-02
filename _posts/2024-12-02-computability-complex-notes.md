@@ -8,7 +8,7 @@ categories: 计算机
 ## 基础符号规定
 
 1. 空字符串记为 $ \epsilon $
-2. 字符串 $ \omega $ 的长度表示为 $ |\omega| $
+2. 字符串 $ \omega $ 的长度表示为 $ \vert\omega\vert $
 3. 若 $ S $ 为符号集合，由 $ S $ 中的符号串联构成的长度为 $ n $ 的字符串的集合表示为 $ S^n $，长度任意的字符串集合表示为 $ S^* $（包含空字符串）  
    例：若 $ S = \{0, 1\} $，则 $ S^2 = \{00, 01, 10, 11\} $，$ S^* = \{\epsilon, 0, 1, 00, 01, 10, 11, 000, 001, \dots\} $
 
@@ -50,7 +50,7 @@ categories: 计算机
   - 迁移函数是一个偏函数 (partial function)，即对于某些 $ \left(q_z, s_x, s_y\right) $ 可能没有定义．如果在运行中遇到没有定义的情况，机器将立刻停机，并拒绝该输入
   - 注意，图灵机可能不会停机
 
-符号集需要至少包含两个符号（例如 $ 0, 1 $），此外并无其他要求．我们可以编码将两个不同的符号集 $ S_1, S_2 $ 在 $ \log_{\left|S_1\right|}(\left|S_2\right|) $ 的长度变化下由一个符号集映射到另一符号集，因此，不同的符号集在绝大多数情况下不影响结果．  
+符号集需要至少包含两个符号（例如 $ 0, 1 $），此外并无其他要求．我们可以编码将两个不同的符号集 $ S_1, S_2 $ 在 $ \log_{\left\vertS_1\right\vert}(\left\vertS_2\right\vert) $ 的长度变化下由一个符号集映射到另一符号集，因此，不同的符号集在绝大多数情况下不影响结果．  
 
 我们可以让图灵机接收多个参数 $ \omega_1, \omega_2, \dots, \omega_n $，多个参数之中可以用一个新字符隔开再重新编码为旧字符，或者让字符集一直拥有一个仅作为分割用的字符．此时，可简记作 $ \text{M}\left(\omega_1, \omega_2, \dots, \omega_n\right) $．
 
@@ -63,7 +63,7 @@ categories: 计算机
 
 由于二进制编码 <sup>[link](https://en.wikipedia.org/wiki/Binary_code)</sup> 的存在，图灵机的迁移函数的所有输入输出情况可以写为一个列表，并编码为二进制，从而表示一个具体的图灵机．
 
-接着，我们将图灵机的编码从小到大排序，并依次映射到正整数上．由于图灵机集合 $ \mathbb{TM} $ 中的编码有无穷多个，因此 $ \mathbb{TM} $ 的势至少是 $ \aleph_0 $（最小的无穷势）；又由于这些编码是 $ \{0, 1\}^* $ 的子集，因此 $ \mathbb{TM} $ 的势最大是 $ \left|\{0, 1\}^*\right|=\aleph_0 $．因此，它的势就是 $ \aleph_0 $，即 $ \left|\mathbb{TM}\right| = \aleph_0 $．因而，$ \mathbb{TM} $ 和 $ \mathbb{N}^+ $ 等势，所以这种映射是一种双射，即每个正整数 $ n $ 都有一个对应的图灵机；每个图灵机 $ \text{M} $ 也有一个对应的正整数．
+接着，我们将图灵机的编码从小到大排序，并依次映射到正整数上．由于图灵机集合 $ \mathbb{TM} $ 中的编码有无穷多个，因此 $ \mathbb{TM} $ 的势至少是 $ \aleph_0 $（最小的无穷势）；又由于这些编码是 $ \{0, 1\}^* $ 的子集，因此 $ \mathbb{TM} $ 的势最大是 $ \left\vert\{0, 1\}^*\right\vert=\aleph_0 $．因此，它的势就是 $ \aleph_0 $，即 $ \left\vert\mathbb{TM}\right\vert = \aleph_0 $．因而，$ \mathbb{TM} $ 和 $ \mathbb{N}^+ $ 等势，所以这种映射是一种双射，即每个正整数 $ n $ 都有一个对应的图灵机；每个图灵机 $ \text{M} $ 也有一个对应的正整数．
 
 本文用 $ \lbrack{n}\rbrack $ 表示正整数 $ n $ 对应的图灵机，$ \lbrack{n}\rbrack\in\mathbb{TM} $；用 $ \langle{\text{M}}\rangle $ 表示图灵机 $ \text{M} $ 对应的正整数，$ \langle{\text{M}}\rangle\in\mathbb{N}^+ $．
 
@@ -73,7 +73,7 @@ categories: 计算机
 
 语言 $ L $ 常常用文字描述．例如，在符号集 $ \Sigma = \left\{a, b\right\} $ 时，“回文字符串”可以指代一种语言 $ L_{pal} $，$ L_{pal} = \left\{\epsilon, a, b, aa, bb, aaa, aba, bab, bbb, \dots\right\} $．
 
-对于一个符号集 $ \Sigma $，所有语言 $ L $ 构成的集合记为 $ \mathbb{L} $，它是 $ \Sigma^* $ 的幂集，即 $ \mathbb{L} = 2^{\Sigma^*} $，它的势 $ \left|\mathbb{L}\right| = \aleph_1 $．
+对于一个符号集 $ \Sigma $，所有语言 $ L $ 构成的集合记为 $ \mathbb{L} $，它是 $ \Sigma^* $ 的幂集，即 $ \mathbb{L} = 2^{\Sigma^*} $，它的势 $ \left\vert\mathbb{L}\right\vert = \aleph_1 $．
 
 语言 $ L $ 的补集对应的语言记为 $ \overline{L} $，称为 $ L $ 的补 (complement)．
 
@@ -104,7 +104,7 @@ $ \text{M} $ 输入为多个参数时可以记作 $ \left(\omega_1, \omega_2, \d
 - $ L $、$ \overline{L} $ 可识别 $ \Leftrightarrow $ $ L $ 可判定
 - $ L $、$ \overline{L} $ 至少有一个不可识别 $ \Leftrightarrow $ $ L $ 不可判定
 
-由于 $ \left|\mathbb{L}\right| = \aleph_1 \gg \aleph_0 = \left|\mathbb{TM}\right| $，而一种图灵机最多只能识别、判定一种语言，所以有无穷多的语言是不可识别且不可判定的．
+由于 $ \left\vert\mathbb{L}\right\vert = \aleph_1 \gg \aleph_0 = \left\vert\mathbb{TM}\right\vert $，而一种图灵机最多只能识别、判定一种语言，所以有无穷多的语言是不可识别且不可判定的．
 
 ### 1.4 图灵机等价性
 
