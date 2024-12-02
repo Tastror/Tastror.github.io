@@ -52,7 +52,7 @@ TeX: {
   - 其中，$q_{\text{start} }, q_{\text{accept} }, q_{\text{reject} }$ 分别表示开始、接受、拒绝状态，其他状态均为中间状态
   - 初始时为开始状态 $q_{\text{start} }$
 
-- 迁移函数 (transition function) $\delta$
+- 迁移函数 (transition function) $\delta$  
   $$
   \delta: \left(Q\setminus\left\lbrace q_{\text{accept} }, q_{\text{reject} }\right\rbrace \right)\times\Gamma^2\to{Q}\times\Gamma^2\times\left\lbrace \text{L},\text{R},\text{S}\right\rbrace ^3 \\
   \delta\left(q_{now}, s_a, s_b\right) = \left(q_{next}, s_b', s_c', D_a, D_b, D_c\right)
