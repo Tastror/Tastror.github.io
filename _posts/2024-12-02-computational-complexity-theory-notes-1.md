@@ -142,6 +142,8 @@ $$
 
 则称 $\text{M}_1, \text{M}_2$ 等价，记作 $\text{M}_1 \cong \text{M}_2$，在一些要展示参数位置的情况，可以写成 $\text{M}_1(\omega) \cong \text{M}_2(\omega)$．
 
+**<font color=dodgerblue>定理 4</font>** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)．
+
 同样，如果定义在 $\Sigma^\ast \to \lbrace 0, 1 \rbrace$（或对应的 $\mathbb{N} \to \lbrace 0, 1 \rbrace$）上的函数 $f(x)$ 满足
 
 $$
@@ -154,9 +156,9 @@ $$
 \right.
 $$
 
-记作 $f \cong \text{M}$ 或 $f(x) \cong \text{M}(x)$．如果函数 $f$ 在所有字符串（自然数）上均有定义，则称为全函数，否则叫做偏函数．
+记作 $f \cong \text{M}$ 或 $f(x) \cong \text{M}(x)$．
 
-注3：如果我们在意输出值（并非判定性问题），可能会需要这样的关系
+注3：如果我们在意输出值（非判定问题），可能会需要这样的关系
 
 $$
 \left\lbrace
@@ -167,9 +169,9 @@ $$
 \right.
 $$
 
-图灵机之间的关系同理．此时，该问题与语言无关（可能是一个求解问题），且不关心拒绝接受．这种问题和等价性出现时，会有非常明显的提示指明问题具有输出，不过现在暂且不必关心．
+图灵机之间的关系同理．此时，该问题与语言无关（可能是一个求解问题），不关心拒绝接受．
 
-**<font color=dodgerblue>定理 4</font>** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)．
+如果函数 $f$ 在所有字符串（自然数）上均有定义，则称 $f$ 为全函数，否则叫做偏函数．对于判定问题，如果存在 $\text{M}(x) \cong f(x)$（或对于非判定问题，如果存在 $\text{M}(x)=f(x)$），则称全函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**．
 
 ### 1.A 本节符号表
 
