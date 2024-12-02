@@ -126,22 +126,48 @@ $\text{M}$ 输入为多个参数时可以记作 $\left(\omega_1, \omega_2, \dots
 
 ### 1.4 图灵机等价性
 
-如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
+对于一个**判定性**问题，我们关心真假值．如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
 
 $$
-\left\lbrace 
+\left\lbrace
 \begin{aligned}
 & \text{M}_1 \text{ accept } \omega \text{ iff } \text{M}_2 \text{ accept } \omega \\
 & \text{M}_1 \text{ reject } \omega \text{ iff } \text{M}_2 \text{ reject } \omega \\
 & \text{M}_1(\omega)\uparrow \text{iff } \text{M}_2(\omega)\uparrow \\
-& \text{M}_1(\omega) = \text{M}_2(\omega) = \sigma, \text{ when }\text{M}_{1(2)}(\omega)\downarrow
 \end{aligned}
 \right.
 $$
 
 则称 $\text{M}_1, \text{M}_2$ 等价，记作 $\text{M}_1 \cong \text{M}_2$，在一些要展示参数位置的情况，可以写成 $\text{M}_1(\omega) \cong \text{M}_2(\omega)$．
 
-**定理 1** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．（证明略）
+同样，如果定义在 $\Sigma^\ast \to \lbrace 0, 1 \rbrace$ 上的函数 $f(x)$ 满足
+
+$$
+\left\lbrace
+\begin{aligned}
+& f(x) = 1 \text{ iff } \text{M} \text{ accept } x \\
+& f(x) = 0 \text{ iff } \text{M} \text{ reject } x \\
+& f(x) \text{ not defined iff } \text{M}(x)\uparrow \\
+\end{aligned}
+\right.
+$$
+
+记作 $f \cong \text{M}$ 或 $f(x) \cong \text{M}(x)$．如果函数 $f$ 在所有字符串上均有定义，则称为全函数，否则叫做偏函数．
+
+注3：如果我们在意输出值（并非判定性问题），可能会需要这样的关系
+
+$$
+\left\lbrace
+\begin{aligned}
+& f(x) = \text{M}(x) \text{ iff } \text{M}(x)\downarrow \\
+& f(x) \text{ not defined iff } \text{M}(x)\uparrow \\
+\end{aligned}
+\right.
+$$
+
+图灵机之间的等价同理．此时，该问题与语言无关（可能是一个求解问题），且不关心拒绝接受．这种问题和等价性出现时，会有非常明显的提示，指明问题具有输出，暂且不必关心．
+
+**[定理 1](https://en.wikipedia.org/wiki/UTM_theorem)** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．
 
 ### 1.A 本节符号表
 
@@ -149,6 +175,8 @@ $$
 | :---: | --- |
 | $\mathbb{TM}$ | 图灵机集合 |
 | $\text{M}$ | 图灵机 |
+| $\text{M} \text{ accept } \omega$ | 图灵机接受 $\omega$ |
+| $\text{M} \text{ reject } \omega$ | 图灵机拒绝 $\omega$ |
 | $\text{M}(\omega)\downarrow$ | 图灵机 $\text{M}$ 在输入 $\omega$ 时停机 |
 | $\text{M}(\omega)\uparrow$ | 图灵机 $\text{M}$ 在输入 $\omega$ 时不停机 |
 | $\text{M}(\omega) = \sigma$ | 图灵机 $\text{M}$ 在停机时输出 $\sigma$ |
@@ -160,7 +188,8 @@ $$
 | $\overline{L}$ | 语言的补 |
 | $\mathbf{R}$ | 语言类 |
 | $\mathbf{oc\text{-}R}$ | 语言类 $\mathbf{R}$ 的补类 |
-| $\text{M}_1 \cong \text{M}_2$ | 图灵机等价 |
+| $\text{M}_1(\omega) \cong \text{M}_2(\omega)$ | 图灵机之间等价 |
+| $f(x) \cong \text{M}(x)$ | 函数和图灵机等价 |
 
 ### 1.B 本节例子
 
