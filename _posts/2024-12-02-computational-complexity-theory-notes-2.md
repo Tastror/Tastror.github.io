@@ -35,7 +35,7 @@ TeX: {
 
 ### 2.2 图灵归约
 
-**<font color=dodgerblue>定义 2.2</font>** 对于语言 $A, B$，如果存在神谕图灵机 $\text{M}^B$ 判定问题 $A$，则称 $A$ 语言可以图灵归约到 $B$ 语言，记作 $A \leqslant_T B$．
+**<font color=dodgerblue>定义 2.2</font>** 对于语言 $A, B$，如果存在神谕图灵机 $\text{M}^B$ 判定问题 $A$，则称 $A$ 语言可以图灵归约 (turing reduction) 到 $B$ 语言，记作 $A \leqslant_T B$．
 
 $\text{M}^B$ 判定问题 $A$，直观上说明 $A$ 问题至少不会比 $B$ 更难．因此归约是往更加复杂的语言上归约．
 
