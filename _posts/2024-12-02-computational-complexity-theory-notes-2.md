@@ -43,7 +43,7 @@ $\text{M}^B$ 判定问题 $A$，直观上说明 $A$ 问题至少不会比 $B$ �
 
 **<font color=dodgerblue>定理 2.3</font>** 若 $A \leqslant_T B$ 且 $A$ 不可判定，则 $B$ 不可判定．
 
-一个简单的例子是停机问题，即 $\texttt{HALT} = \left\lbrace\langle{\text{M} }\rangle\right\vert\left.{\text{M} }\text{ halt in every }x\right\rbrace$．根据性质 1.18，$A_{\mathbb{TM} }$ 不可判定，于是我们可以尝试用 $\texttt{HALT}$ 作为神谕 $A_{\mathbb{TM} }$ 来归约．
+一个简单的例子是停机问题，即 $\texttt{HALT} = \left\lbrace\langle{\text{M} }\rangle\right\vert\left.{\text{M} }\text{ halt in every }x\right\rbrace$．我们想证明它的不可判定性，根据性质 1.18，$A_{\mathbb{TM} }$ 不可判定，我们可以尝试用 $\texttt{HALT}$ 作为神谕，来让归约 $A_{\mathbb{TM} }$ 到它．
 
 可以构造如下神谕图灵机 $\text{M}^\texttt{HALT}(\langle\text{T}\rangle, x)$
 
