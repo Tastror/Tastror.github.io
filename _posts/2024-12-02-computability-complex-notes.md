@@ -13,8 +13,8 @@ TeX: {
   extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
 },
   tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      displayMath: [ ['$$','$$'] ],
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       processEscapes: true,
       processEnvironments: true
     },
