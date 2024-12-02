@@ -77,7 +77,7 @@ categories: 计算机
 
 语言 $L$ 的补集对应的语言记为 $\overline{L}$，称为 $L$ 的补 (complement)．
 
-语言的集合常常称为“类 (class)”，对于类 $\mathbf{R} = \left\{{L_1}, {L_2}, \dots\right\}$，将 $\left\{\overline{L_1}, \overline{L_2}, \dots\right\}$ 记为 $\mathbf{co\text{-}R}$，称为 $\mathbf{R}$ 类的补类 (complement class)．
+语言的集合常常称为“类 (class)”，对于类 $\mathbf{R} = \left\{ {L_1}, {L_2}, \dots\right\}$，将 $\left\{\overline{L_1}, \overline{L_2}, \dots\right\}$ 记为 $\mathbf{co\text{-}R}$，称为 $\mathbf{R}$ 类的补类 (complement class)．
 
 ### 1.3 判定与识别
 
