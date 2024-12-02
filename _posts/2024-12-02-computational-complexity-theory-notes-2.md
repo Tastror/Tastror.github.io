@@ -74,21 +74,21 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 
 另一方面，如果 $B$ 仅仅是可识别补集（定义 1.11），完全相同的方式，可以证明 $A$ 语言也是可识别补集的．即
 
-**<font color=dodgerblue>定理 2.7</font>** 若 $A \leqslant_m B$ 且 $A$ 不可识别补集，则 $B$ 不可识别补集．
+**<font color=dodgerblue>定理 2.8</font>** 若 $A \leqslant_m B$ 且 $A$ 不可识别补集，则 $B$ 不可识别补集．
 
 即使我们不知道 $A$ 是否可识别，仅需要 $A$ 不可判定，再同时证明 $A \leqslant_m B$ 与 $A \leqslant_m \overline{B}$．由于 $A$ 不可识别或不可识别补集 $\Leftrightarrow$ $A$ 不可判定（推论 1.12），说明 $A$ 要么不可识别，同时将这个两个性质传递给了 $B$ 和 $\overline{B}$；要么不可识别补集，亦将这个两个性质传递给了 $B$ 和 $\overline{B}$，两种情况下，$B$ 和 $\overline{B}$ 都是不可识别的．即
 
-**<font color=dodgerblue>推论 2.8</font>** 若 $A \leqslant_m B, A \leqslant_m \overline{B}$ 且 $A$ 不可判定，则 $B$ 不可识别且不可识别补集．
+**<font color=dodgerblue>推论 2.9</font>** 若 $A \leqslant_m B, A \leqslant_m \overline{B}$ 且 $A$ 不可判定，则 $B$ 不可识别且不可识别补集．
 
 ### 2.4 递归定理
 
 下面两个问题涉及到输出，因此等价符号 $\cong$ 采取（一）注3 的定义，即输出相同或均不停机，则两个图灵机（或函数和图灵机）等价．
 
-**<font color=dodgerblue>定理 2.9</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)，亦称为第一递归定理 (the first recursion theorem)，表明，对于任意可计算函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
+**<font color=dodgerblue>定理 2.10</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)，亦称为第一递归定理 (the first recursion theorem)，表明，对于任意可计算函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
 
 证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Proof_of_the_fixed-point_theorem)．
 
-**<font color=dodgerblue>定理 2.10</font>** 克林递归定理 (Kleene's recursion theorem)，亦称为第二递归定理 (the second recursion theorem)，表明，对于任意偏可计算（部分可计算）函数 $t(x, y)$，存在图灵机 $\text{M}$ 使得 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x)$．
+**<font color=dodgerblue>定理 2.11</font>** 克林递归定理 (Kleene's recursion theorem)，亦称为第二递归定理 (the second recursion theorem)，表明，对于任意偏可计算（部分可计算）函数 $t(x, y)$，存在图灵机 $\text{M}$ 使得 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x)$．
 
 证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Kleene's_second_recursion_theorem)
 
