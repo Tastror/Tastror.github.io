@@ -45,7 +45,7 @@ $\text{M}^B$ 判定问题 $A$，直观上说明 $A$ 问题至少不会比 $B$ �
 
 一个简单的例子是停机问题，即 $\texttt{HALT} = \left\lbrace\langle{\text{M} }\rangle\right\vert\left.{\text{M} }\text{ halt in every }x\right\rbrace$．我们想证明它的不可判定性，根据性质 1.18，$A_{\mathbb{TM} }$ 不可判定，我们可以尝试用 $\texttt{HALT}$ 作为神谕，来让归约 $A_{\mathbb{TM} }$ 到它．
 
-可以构造如下神谕图灵机 $\text{M}^\texttt{HALT}(\langle\text{T}\rangle, x)$
+可以构造如下神谕图灵机 $\text{M}^\texttt{HALT}(\langle\text{T}\rangle, x)$，其中 $\text{T} \in \mathbb{TM}$，
 
 - 构造一个图灵机 $\text{D}(\omega)$，对于任何 $\omega$，$\text{D}(\omega)$ 运行 $\text{T}(x)$
 - 询问神 $\langle{\text{D} }\rangle$ 是否属于 $\texttt{HALT}$
