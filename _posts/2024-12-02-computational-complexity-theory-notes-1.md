@@ -117,14 +117,19 @@ $\text{M}$ 输入为多个参数时可以记作 $\left(\omega_1, \omega_2, \dots
 
 每个图灵机一定识别一种语言（只考虑接受，不停机和拒绝不用处理；哪怕全部拒绝或不停机，也识别了语言 $L=\lbrace \epsilon\rbrace$），但只有一定停机的的图灵机才能识别并判定一种语言．另外，在判定、识别语言时，无需考虑输出，仅需进入 $q_{\text{accept} }$、$q_{\text{reject} }$ 状态即可．
 
-**<font color=dodgerblue>定义 1.10</font>** 对于一个语言 $L$，如果存在图灵机判定它，则称 $L$ 是**可判定 (decidable)** 或**可计算 (computable)** 的．
+**<font color=dodgerblue>定义 1.10</font>** 对于一个语言 $L$，如果存在图灵机判定它，则称 $L$ 是**可判定 (decidable)** 或**可计算 (computable)** 的．如果语言 $\overline{L}$ 是可判定的，则称语言 $L$ 是**可判定补集 (co-decidable)** 或**可计算补集 (co-computable)** 的．
 
-**<font color=dodgerblue>定义 1.11</font>** 对于一个语言 $L$，如果存在图灵机识别它，则称 $L$ 是**可识别 (recognizable)** 的．
+**<font color=dodgerblue>定义 1.11</font>** 对于一个语言 $L$，如果存在图灵机识别它，则称 $L$ 是**可识别 (recognizable)** 的．如果语言 $\overline{L}$ 是可识别的，则称语言 $L$ 是**可识别补集 (co-recognizable)** 的．
   
 **<font color=dodgerblue>推论 1.12</font>** 由定义可知，
 
 - $L$、$\overline{L}$ 可识别 $\Leftrightarrow$ $L$ 可判定 $\Leftrightarrow$ $\overline{L}$ 可判定
-- $L$、$\overline{L}$ 至少有一个不可识别 $\Leftrightarrow$ $L$ 不可判定
+- $L$、$\overline{L}$ 至少有一个不可识别 $\Leftrightarrow$ $L$ 不可判定 $\Leftrightarrow$ $\overline{L}$ 不可判定
+
+换成补集（co-）描述方法即为
+
+- $L$ 可识别且可识别补集 $\Leftrightarrow$ $L$ 可判定 $\Leftrightarrow$ $L$ 可判定补集
+- $L$ 不可识别或不可识别补集 $\Leftrightarrow$ $L$ 不可判定 $\Leftrightarrow$ $L$ 不可判定补集
 
 **<font color=dodgerblue>推论 1.13</font>** 由于 $\left\vert\mathbb{L}\right\vert = \aleph_1 \gg \aleph_0 = \left\vert\mathbb{TM}\right\vert$，而一种图灵机最多只能识别、判定一种语言，所以有无穷多的语言是不可识别且不可判定的．
 
@@ -135,9 +140,9 @@ $\text{M}$ 输入为多个参数时可以记作 $\left(\omega_1, \omega_2, \dots
 $$
 \left\lbrace
 \begin{aligned}
-& \text{M}_1 \text{ accept } \omega \text{ iff } \text{M}_2 \text{ accept } \omega \\
-& \text{M}_1 \text{ reject } \omega \text{ iff } \text{M}_2 \text{ reject } \omega \\
-& \text{M}_1(\omega)\uparrow \text{iff } \text{M}_2(\omega)\uparrow \\
+& \text{M}_1 \text{ accept } \omega \Leftrightarrow \text{M}_2 \text{ accept } \omega \\
+& \text{M}_1 \text{ reject } \omega \Leftrightarrow \text{M}_2 \text{ reject } \omega \\
+& \text{M}_1(\omega)\uparrow \; \Leftrightarrow \text{M}_2(\omega)\uparrow \\
 \end{aligned}
 \right.
 $$
@@ -151,9 +156,9 @@ $$
 $$
 \left\lbrace
 \begin{aligned}
-& f(x) = 1 \text{ iff } \text{M} \text{ accept } x \\
-& f(x) = 0 \text{ iff } \text{M} \text{ reject } x \\
-& f(x) \text{ not defined iff } \text{M}(x)\uparrow \\
+& f(x) = 1 \Leftrightarrow \text{M} \text{ accept } x \\
+& f(x) = 0 \Leftrightarrow \text{M} \text{ reject } x \\
+& f(x) \text{ not defined} \Leftrightarrow \text{M}(x)\uparrow \\
 \end{aligned}
 \right.
 $$
@@ -165,8 +170,8 @@ $$
 $$
 \left\lbrace
 \begin{aligned}
-& f(x) = \text{M}(x) \text{ iff } \text{M}(x)\downarrow \\
-& f(x) \text{ not defined iff } \text{M}(x)\uparrow \\
+& f(x) = \text{M}(x) \Leftrightarrow \text{M}(x)\downarrow \\
+& f(x) \text{ not defined} \Leftrightarrow \text{M}(x)\uparrow \\
 \end{aligned}
 \right.
 $$
