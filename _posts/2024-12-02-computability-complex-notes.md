@@ -30,19 +30,19 @@ categories: 计算机
   - 初始时，输入带上从初始位置向右写有输入 $ \omega \in \Sigma^* $，输入带其他位置以及其他带子上都是空白符．输入为 $ \omega $ 时可简记作 $ \text{M}(\omega) $
 
 - 有限状态 (state) 集 $ Q $
-  - $ Q = \left\{q_{\text{start}}, q_{\text{accept}}, q_{\text{reject}}, q_{1}, q_{2}, \dots, q_{n}\right\} $
-  - 其中，$ q_{\text{start}}, q_{\text{accept}}, q_{\text{reject}} $ 分别表示开始、接受、拒绝状态，其他状态均为中间状态
-  - 初始时为开始状态 $ q_{\text{start}} $
+  - $ Q = \left\{q_{\text{start} }, q_{\text{accept} }, q_{\text{reject} }, q_{1}, q_{2}, \dots, q_{n}\right\} $
+  - 其中，$ q_{\text{start} }, q_{\text{accept} }, q_{\text{reject} } $ 分别表示开始、接受、拒绝状态，其他状态均为中间状态
+  - 初始时为开始状态 $ q_{\text{start} } $
 
 - 迁移函数 (transition function) $ \delta $
   $$
-  \delta: \left(Q\setminus\left\{q_{\text{accept}}, q_{\text{reject}}\right\}\right)\times\Gamma^2\to{Q}\times\Gamma^2\times\left\{\text{L},\text{R},\text{S}\right\}^3 \\
+  \delta: \left(Q\setminus\left\{q_{\text{accept} }, q_{\text{reject} }\right\}\right)\times\Gamma^2\to{Q}\times\Gamma^2\times\left\{\text{L},\text{R},\text{S}\right\}^3 \\
   \delta\left(q_{now}, s_a, s_b\right) = \left(q_{next}, s_b', s_c', D_a, D_b, D_c\right)
   $$
   - 左侧 $ s_a, s_b $ 为前两个带子当前指针读到的值，右侧 $ s_b', s_c' $ 为后两个带子上写入的值
   - $ \text{L},\text{R},\text{S} $ 表示在进行完这次读写后，三条带子的指针分别左移、右移、不动
-  - 当当前状态在 $ q_{now} \left(q_{now} \notin \left\{q_{\text{accept}}, q_{\text{reject}}\right\}\right) $ 且前两个读入值为 $ s_a, s_b $ 时，即会进行一次 $ \delta $ 操作．将状态改为 $ q_{next} $，并将后两个带子上的值改为 $ s_b', s_c' $，修改**后**，三条带子的指针分别进行 $ D_a, D_b, D_c $ 方向的移动
-  - 如果进入 $ q_{\text{accept}} $ 或 $ q_{\text{reject}} $ 状态，则运行终止，即停机 (halt)，并表示 $ \text{M} $ 接受 (accept) 或拒绝 (reject) 输入 $ \omega $
+  - 当当前状态在 $ q_{now} \left(q_{now} \notin \left\{q_{\text{accept} }, q_{\text{reject} }\right\}\right) $ 且前两个读入值为 $ s_a, s_b $ 时，即会进行一次 $ \delta $ 操作．将状态改为 $ q_{next} $，并将后两个带子上的值改为 $ s_b', s_c' $，修改**后**，三条带子的指针分别进行 $ D_a, D_b, D_c $ 方向的移动
+  - 如果进入 $ q_{\text{accept} } $ 或 $ q_{\text{reject} } $ 状态，则运行终止，即停机 (halt)，并表示 $ \text{M} $ 接受 (accept) 或拒绝 (reject) 输入 $ \omega $
   - 如果图灵机在输入 $ \omega $ 停机，记作 $ \text{M}(\omega)\downarrow $；否则记作 $ \text{M}(\omega)\uparrow $
   - 如果图灵机在停机时，输出带上写有内容 $ \sigma $，则称图灵机输出 $ \sigma $，记作 $ \text{M}(\omega) = \sigma $
 
@@ -65,7 +65,7 @@ categories: 计算机
 
 接着，我们将图灵机的编码从小到大排序，并依次映射到正整数上．由于图灵机集合 $ \mathbb{TM} $ 中的编码有无穷多个，因此 $ \mathbb{TM} $ 的势至少是 $ \aleph_0 $（最小的无穷势）；又由于这些编码是 $ \{0, 1\}^* $ 的子集，因此 $ \mathbb{TM} $ 的势最大是 $ \left\vert\{0, 1\}^*\right\vert=\aleph_0 $．因此，它的势就是 $ \aleph_0 $，即 $ \left\vert\mathbb{TM}\right\vert = \aleph_0 $．因而，$ \mathbb{TM} $ 和 $ \mathbb{N}^+ $ 等势，所以这种映射是一种双射，即每个正整数 $ n $ 都有一个对应的图灵机；每个图灵机 $ \text{M} $ 也有一个对应的正整数．
 
-本文用 $ \lbrack{n}\rbrack $ 表示正整数 $ n $ 对应的图灵机，$ \lbrack{n}\rbrack\in\mathbb{TM} $；用 $ \langle{\text{M}}\rangle $ 表示图灵机 $ \text{M} $ 对应的正整数，$ \langle{\text{M}}\rangle\in\mathbb{N}^+ $．
+本文用 $ \lbrack{n}\rbrack $ 表示正整数 $ n $ 对应的图灵机，$ \lbrack{n}\rbrack\in\mathbb{TM} $；用 $ \langle{\text{M} }\rangle $ 表示图灵机 $ \text{M} $ 对应的正整数，$ \langle{\text{M} }\rangle\in\mathbb{N}^+ $．
 
 ### 1.3 语言
 
@@ -87,7 +87,7 @@ categories: 计算机
 
 $ \text{M} $ 输入为多个参数时可以记作 $ \left(\omega_1, \omega_2, \dots, \omega_n\right) \in L $．
 
-每个图灵机一定识别一种语言（只考虑接受，不停机和拒绝不用处理；哪怕全部拒绝或不停机，也识别了语言 $ L=\{\epsilon\} $），但只有一定停机的的图灵机才能识别并判定一种语言．另外，在判定、识别语言时，无需考虑输出，仅需进入 $ q_{\text{accept}} $、$ q_{\text{reject}} $ 状态即可．
+每个图灵机一定识别一种语言（只考虑接受，不停机和拒绝不用处理；哪怕全部拒绝或不停机，也识别了语言 $ L=\{\epsilon\} $），但只有一定停机的的图灵机才能识别并判定一种语言．另外，在判定、识别语言时，无需考虑输出，仅需进入 $ q_{\text{accept} } $、$ q_{\text{reject} } $ 状态即可．
 
 对于一个语言 $ L $，如果存在图灵机判定它，则称 $ L $ 是**可判定 (decidable)** 或**可计算 (computable)** 的．
 
@@ -123,7 +123,7 @@ $$
 
 则称 $ \text{M}_1, \text{M}_2 $ 等价，记作 $ \text{M}_1 \cong \text{M}_2 $，在一些要展示参数位置的情况，可以写成 $ \text{M}_1(\omega) \cong \text{M}_2(\omega) $．
 
-**定理 1** 存在通用图灵机 $ \text{U} $，对任意 $ \langle{\text{M}}\rangle $ 和 $ \omega $ 输入，使得 $ \text{U}(\langle{\text{M}}\rangle, \omega) \cong \text{M}(\omega) $．（证明略）
+**定理 1** 存在通用图灵机 $ \text{U} $，对任意 $ \langle{\text{M} }\rangle $ 和 $ \omega $ 输入，使得 $ \text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega) $．（证明略）
 
 ### 1.A 本节符号表
 
@@ -136,7 +136,7 @@ $$
 | $ \text{M}(\omega) = \sigma $ | 图灵机 $ \text{M} $ 在停机时输出 $ \sigma $ |
 | $ \text{M}\left(\omega_1, \omega_2, \dots, \omega_n\right) $ | 图灵机 $ \text{M} $ 以 $ \omega_1, \omega_2, \dots, \omega_n $ 作为输入 |
 | $ \lbrack{n}\rbrack $ | 正整数 $ n $ 对应的图灵机 |
-| $ \langle{\text{M}}\rangle $ | 图灵机 $ \text{M} $ 对应的正整数 |
+| $ \langle{\text{M} }\rangle $ | 图灵机 $ \text{M} $ 对应的正整数 |
 | $ \mathbb{L} $ | 语言集合 |
 | $ L $ | 语言 |
 | $ \overline{L} $ | 语言的补 |
@@ -150,12 +150,12 @@ $$
 
 证明：图灵机首先在工作带照抄一遍输入，然后将输入带和工作带的指针分别移动到头和尾，然后分别向右向左运动并比较两个字符是否相同．如果遇到不相同的则拒绝，如果遇到空白（扫描完毕）则接受．
 
-一个可识别不可判定的例子：$ A_{\mathbb{TM}} $
+一个可识别不可判定的例子：$ A_{\mathbb{TM} } $
 
-$ A_{\mathbb{TM}} $ 判断图灵机 $ \text{M} $ 是否接受一个输入 $ \omega $，$ (\langle{\text{M}}\rangle,\omega) \in A_{\mathbb{TM}} $ 当且仅当 $ \text{M} $ 图灵机接受 $ \omega $
+$ A_{\mathbb{TM} } $ 判断图灵机 $ \text{M} $ 是否接受一个输入 $ \omega $，$ (\langle{\text{M} }\rangle,\omega) \in A_{\mathbb{TM} } $ 当且仅当 $ \text{M} $ 图灵机接受 $ \omega $
 
 证明：对角线方法，参考[链接](https://courses.cs.washington.edu/courses/cse322/04au/Lect10.pdf)
 
-一个不可识别不可判定的例子：$ \overline{A_{\mathbb{TM}}} $
+一个不可识别不可判定的例子：$ \overline{A_{\mathbb{TM} }} $
 
-证明：由于 $ A_{\mathbb{TM}} $ 可识别不可判定，根据前文定义中的直接推论，$ L $、$ \overline{L} $ 至少有一个不可识别 $ \Leftrightarrow $ $ L $ 不可判定，因此 $ \overline{A_{\mathbb{TM}}} $ 不可识别，亦不可判定．
+证明：由于 $ A_{\mathbb{TM} } $ 可识别不可判定，根据前文定义中的直接推论，$ L $、$ \overline{L} $ 至少有一个不可识别 $ \Leftrightarrow $ $ L $ 不可判定，因此 $ \overline{A_{\mathbb{TM} }} $ 不可识别，亦不可判定．
