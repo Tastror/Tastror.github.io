@@ -40,7 +40,7 @@ TeX: {
 
 ### 1.1 图灵机
 
-本文将采用三纸带图灵机 (turing machine) $\text{M}$，定义为拥有
+**<font color=dodgerblue>定义 1.1</font>** 本文将采用三纸带图灵机 (turing machine) $\text{M}$，定义为拥有
 
 - 三条两端均无限长的纸带 (tape)
   - 输入带（只读）input tape (read-only)
@@ -78,7 +78,7 @@ TeX: {
 
 我们可以让图灵机接收多个参数 $\omega_1, \omega_2, \dots, \omega_n$，多个参数之中可以用一个新字符隔开再重新编码为旧字符，或者让字符集一直拥有一个仅作为分割用的字符．此时，可简记作 $\text{M}\left(\omega_1, \omega_2, \dots, \omega_n\right)$．
 
-在特定符号集下，所有图灵机构成的集合记为 $\mathbb{TM}$．
+**<font color=dodgerblue>定义 1.2</font>** 在特定符号集下，所有图灵机构成的集合记为 $\mathbb{TM}$．
 
 注1：一条纸带的定义亦可，但是防止后续对严格处理 $\mathbf{L}$ 的复杂性产生影响，本文规定为三条．  
 注2：其他定义可能与之略有出入，但不影响使用．
@@ -89,46 +89,48 @@ TeX: {
 
 接着，我们将图灵机的编码从小到大排序，并依次映射到自然数上．由于图灵机集合 $\mathbb{TM}$ 中的编码有无穷多个，因此 $\mathbb{TM}$ 的势至少是 $\aleph_0$（最小的无穷势）；又由于这些编码是 $\lbrace 0, 1\rbrace ^\ast$ 的子集，因此 $\mathbb{TM}$ 的势最大是 $\left\vert\lbrace 0, 1\rbrace ^\ast\right\vert=\aleph_0$．因此，它的势就是 $\aleph_0$，即 $\left\vert\mathbb{TM}\right\vert = \aleph_0$．因而，$\mathbb{TM}$ 和 $\mathbb{N}$ 等势，所以每个自然数 $n$ 都有一个对应的图灵机，每个图灵机 $\text{M}$ 也有一个对应的自然数，即
 
-**<font color=dodgerblue>推论 1</font>** 自然数和图灵机一一对应．
+**<font color=dodgerblue>推论 1.3</font>** 自然数和图灵机一一对应．
 
 本文用 $\lbrack{n}\rbrack$ 表示自然数 $n$ 对应的图灵机，$\lbrack{n}\rbrack\in\mathbb{TM}$；用 $\langle{\text{M} }\rangle$ 表示图灵机 $\text{M}$ 对应的自然数，$\langle{\text{M} }\rangle\in\mathbb{N}$．
 
 ### 1.3 语言
 
-定义语言 (language) $L$ 如下，对于一个符号集 $\Sigma$ 所构成的字符串集合 $\Sigma^\ast$，语言 $L$ 是 $\Sigma^\ast$ 的一个子集，即 $L \subseteq \Sigma^\ast$．
+**<font color=dodgerblue>定义 1.4</font>** 定义语言 (language) $L$ 如下，对于一个符号集 $\Sigma$ 所构成的字符串集合 $\Sigma^\ast$，语言 $L$ 是 $\Sigma^\ast$ 的一个子集，即 $L \subseteq \Sigma^\ast$．
 
 语言 $L$ 常常用文字描述．例如，在符号集 $\Sigma = \left\lbrace a, b\right\rbrace$ 时，“回文字符串”可以指代一种语言 $L_{pal}$，$L_{pal} = \left\lbrace \epsilon, a, b, aa, bb, aaa, aba, bab, bbb, \dots\right\rbrace$．
 
-对于一个符号集 $\Sigma$，所有语言 $L$ 构成的集合记为 $\mathbb{L}$，它是 $\Sigma^\ast$ 的幂集，即 $\mathbb{L} = 2^{\Sigma^\ast}$，它的势 $\left\vert\mathbb{L}\right\vert = \aleph_1$．
+**<font color=dodgerblue>定义 1.5</font>** 对于一个符号集 $\Sigma$，所有语言 $L$ 构成的集合记为 $\mathbb{L}$，它是 $\Sigma^\ast$ 的幂集，即 $\mathbb{L} = 2^{\Sigma^\ast}$，它的势 $\left\vert\mathbb{L}\right\vert = \aleph_1$．
 
-语言 $L$ 的补集对应的语言记为 $\overline{L}$，称为 $L$ 的补 (complement)．
+**<font color=dodgerblue>定义 1.6</font>** 语言 $L$ 的补集，即 $\Sigma^\ast \setminus L$ 对应的语言记为 $\overline{L}$，称为 $L$ 的补 (complement)．
 
-语言的集合常常称为“类 (class)”，对于类 $\mathbf{R} = \left\lbrace  {L_1}, {L_2}, \dots\right\rbrace$，将 $\left\lbrace \overline{L_1}, \overline{L_2}, \dots\right\rbrace$ 记为 $\mathbf{co\text{-}R}$，称为 $\mathbf{R}$ 类的补类 (complement class)．
+**<font color=dodgerblue>定义 1.7</font>** 语言的集合常常称为“类 (class)”，对于类 $\mathbf{R} = \left\lbrace  {L_1}, {L_2}, \dots\right\rbrace$，将 $\left\lbrace \overline{L_1}, \overline{L_2}, \dots\right\rbrace$ 记为 $\mathbf{co\text{-}R}$，称为 $\mathbf{R}$ 类的补类 (complement class)．
 
 ### 1.3 判定与识别
 
-对于一台图灵机 $\text{M}\in\mathbb{TM}$，符号集 $\Sigma$，若对任何 $\omega\in\Sigma^\ast$ 作为输入，$\text{M}$ 一定停机，即一定接受 $\omega$ 或者拒绝 $\omega$，则将所有接受的 $\omega$ 组成的集合记为语言 $L$，称 $\text{M}$ **判定 (decide)** $L$．
+**<font color=dodgerblue>定义 1.8</font>** 对于一台图灵机 $\text{M}\in\mathbb{TM}$，符号集 $\Sigma$，若对任何 $\omega\in\Sigma^\ast$ 作为输入，$\text{M}$ 一定停机，即一定接受 $\omega$ 或者拒绝 $\omega$，则将所有接受的 $\omega$ 组成的集合记为语言 $L$，称 $\text{M}$ **判定 (decide)** $L$．
 
-如果图灵机 $\text{M}$ 对任何 $\omega\in\Sigma^\ast$ 作为输入，$\text{M}$ 接受 $\omega$ 当且仅当 $\omega\in{L}$，则称 $\text{M}$ **识别 (recognize)** $L$．和上文判定的区别是，识别 $L$ 时 $\text{M}$ 不一定停机，即在 $\omega\notin{L}$ 时，$\text{M}$ 可以拒绝，也可以死循环．
+**<font color=dodgerblue>定义 1.9</font>** 如果图灵机 $\text{M}$ 对任何 $\omega\in\Sigma^\ast$ 作为输入，$\text{M}$ 接受 $\omega$ 当且仅当 $\omega\in{L}$，则称 $\text{M}$ **识别 (recognize)** $L$．
+
+和上文判定的区别是，识别 $L$ 时 $\text{M}$ 不一定停机，即在 $\omega\notin{L}$ 时，$\text{M}$ 可以拒绝，也可以死循环．
 
 $\text{M}$ 输入为多个参数时可以记作 $\left(\omega_1, \omega_2, \dots, \omega_n\right) \in L$．
 
 每个图灵机一定识别一种语言（只考虑接受，不停机和拒绝不用处理；哪怕全部拒绝或不停机，也识别了语言 $L=\lbrace \epsilon\rbrace$），但只有一定停机的的图灵机才能识别并判定一种语言．另外，在判定、识别语言时，无需考虑输出，仅需进入 $q_{\text{accept} }$、$q_{\text{reject} }$ 状态即可．
 
-对于一个语言 $L$，如果存在图灵机判定它，则称 $L$ 是**可判定 (decidable)** 或**可计算 (computable)** 的．
+**<font color=dodgerblue>定义 1.10</font>** 对于一个语言 $L$，如果存在图灵机判定它，则称 $L$ 是**可判定 (decidable)** 或**可计算 (computable)** 的．
 
-对于一个语言 $L$，如果存在图灵机识别它，则称 $L$ 是**可识别 (recognizable)** 的．
+**<font color=dodgerblue>定义 1.11</font>** 对于一个语言 $L$，如果存在图灵机识别它，则称 $L$ 是**可识别 (recognizable)** 的．
   
-**<font color=dodgerblue>推论 2</font>** 由定义可知，
+**<font color=dodgerblue>推论 1.12</font>** 由定义可知，
 
 - $L$、$\overline{L}$ 可识别 $\Leftrightarrow$ $L$ 可判定 $\Leftrightarrow$ $\overline{L}$ 可判定
 - $L$、$\overline{L}$ 至少有一个不可识别 $\Leftrightarrow$ $L$ 不可判定
 
-**<font color=dodgerblue>推论 3</font>** 由于 $\left\vert\mathbb{L}\right\vert = \aleph_1 \gg \aleph_0 = \left\vert\mathbb{TM}\right\vert$，而一种图灵机最多只能识别、判定一种语言，所以有无穷多的语言是不可识别且不可判定的．
+**<font color=dodgerblue>推论 1.13</font>** 由于 $\left\vert\mathbb{L}\right\vert = \aleph_1 \gg \aleph_0 = \left\vert\mathbb{TM}\right\vert$，而一种图灵机最多只能识别、判定一种语言，所以有无穷多的语言是不可识别且不可判定的．
 
 ### 1.4 图灵机等价性
 
-对于一个**判定性**问题，我们关心真假值．如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
+**<font color=dodgerblue>定义 1.14</font>** 对于一个**判定性**问题，我们关心真假值．如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
 
 $$
 \left\lbrace
@@ -142,9 +144,9 @@ $$
 
 则称 $\text{M}_1, \text{M}_2$ 等价，记作 $\text{M}_1 \cong \text{M}_2$，在一些要展示参数位置的情况，可以写成 $\text{M}_1(\omega) \cong \text{M}_2(\omega)$．
 
-**<font color=dodgerblue>定理 4</font>** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)．
+**<font color=dodgerblue>定理 1.15</font>** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)．
 
-同样，如果定义在 $\Sigma^\ast \to \lbrace 0, 1 \rbrace$（或对应的 $\mathbb{N} \to \lbrace 0, 1 \rbrace$）上的函数 $f(x)$ 满足
+**<font color=dodgerblue>定义 1.16</font>** 同样，如果定义在 $\Sigma^\ast \to \lbrace 0, 1 \rbrace$（或对应的 $\mathbb{N} \to \lbrace 0, 1 \rbrace$）上的函数 $f(x)$ 满足
 
 $$
 \left\lbrace
@@ -171,7 +173,7 @@ $$
 
 图灵机之间的关系同理．此时，该问题与语言无关（可能是一个求解问题），不关心拒绝接受．
 
-如果函数 $f$ 在所有字符串（自然数）上均有定义，则称 $f$ 为全函数，否则叫做偏函数．对全函数 $f$，对于判定问题，如果存在 $\text{M}(x) \cong f(x)$（或对于非判定问题，如果存在 $\text{M}(x)=f(x)$），则全函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**．
+**<font color=dodgerblue>定义 1.17</font>** 如果函数 $f$ 在所有字符串（自然数）上均有定义，则称 $f$ 为全函数，否则叫做偏函数．对全函数 $f$，对于判定问题，如果存在 $\text{M}(x) \cong f(x)$（或对于非判定问题，如果存在 $\text{M}(x)=f(x)$），则全函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**．
 
 ### 1.A 本节符号表
 
@@ -207,7 +209,7 @@ $A_{\mathbb{TM} }$ 判断图灵机 $\text{M}$ 是否接受一个输入 $\omega$�
 
 证明：对角线方法，参考[链接](https://courses.cs.washington.edu/courses/cse322/04au/Lect10.pdf)．此证明方法十分重要．
 
-**<font color=dodgerblue>性质 5</font>** $A_{\mathbb{TM} }$ 可识别，但不可判定
+**<font color=dodgerblue>性质 1.18</font>** $A_{\mathbb{TM} }$ 可识别，但不可判定．
 
 3，一个不可识别不可判定的例子：$\overline{A_{\mathbb{TM} }}$
 
