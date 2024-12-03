@@ -212,17 +212,17 @@ $$
 
 **<font color=dodgerblue>定义 1.22</font>** 对于偏函数 $f$，如果存在 $\text{M}$ 使得 $\text{M} \cong f$，则称函数 $f$ 称为**偏可计算函数 (partial computable function)** 或**偏可递归函数 (partial recursive function)**；如果 $f$ 是全函数，则函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**．
 
-可以看到，可计算函数就是图灵机一定不停机的情况．也有文献将后者称为“全可计算函数”或“全可递归函数”，但为了和语言的定义统一，本文不添加“全”字．
-
-一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，可以构造 $f(\omega)=\text{M}(\omega)$，如果输入不停机则不定义，则有 $f \cong \text{M}$．另一方面，我们定义只有能找到 $\text{M} \cong f$ 的 $f$ 才是偏可计算的，于是，
-
-**<font color=dodgerblue>定理 1.23</font>** 图灵机与偏可计算函数等价．
+可以看到，可计算函数就是图灵机一定不停机的情况．也有文献将后者称为“全可计算函数”或“全可递归函数”，但为了和语言的定义统一，本文不添加“全”字．．
 
 与语言的定义进行对比，函数的可计算性和语言的可计算性是类似的，都需要存在一个不停机的图灵机，和它等价或判定它．但是函数的偏可计算性与语言的可识别性稍有不同．可识别的语言如果不包含 $x$，对应的图灵机在 $x$ 上可以拒绝或不停机；偏可计算的函数如果在 $x$ 上无定义，它对应的图灵机也必须在 $x$ 上不停机．
 
 和语言的结论一样，由于函数是 ${\Sigma^\ast} \to {\Sigma^\ast}$ 的，其势为 ${\aleph_0}^{\aleph_0} = \aleph_1$，因而也有结论
 
-**<font color=dodgerblue>推论 1.24</font>** 有无穷多的函数不是偏可计算的，亦不是可计算的．
+**<font color=dodgerblue>推论 1.23</font>** 有无穷多的函数不是偏可计算的，亦不是可计算的．
+
+一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，可以构造 $f(\omega)=\text{M}(\omega)$，如果输入不停机则不定义，则有 $f \cong \text{M}$．另一方面，我们定义只有能找到 $\text{M} \cong f$ 的 $f$ 才是偏可计算的，于是，
+
+**<font color=dodgerblue>定理 1.24</font>** 图灵机与偏可计算函数等价
 
 最后，参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)，我们可以证明存在一个通用图灵机，即
 
