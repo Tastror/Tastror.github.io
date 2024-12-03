@@ -234,8 +234,6 @@ $$
 | :---: | --- |
 | $\mathbb{TM}$ | 图灵机集合 |
 | $\text{M}$ | 图灵机 |
-| $\text{M} \text{ accept } \omega$ | 图灵机接受 $\omega$ |
-| $\text{M} \text{ reject } \omega$ | 图灵机拒绝 $\omega$ |
 | $\text{M}(\omega)\downarrow$ | 图灵机 $\text{M}$ 在输入 $\omega$ 时停机 |
 | $\text{M}(\omega)\uparrow$ | 图灵机 $\text{M}$ 在输入 $\omega$ 时不停机 |
 | $\text{M}(\omega) = \sigma$ | 图灵机 $\text{M}$ 在停机时输出 $\sigma$ |
