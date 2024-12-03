@@ -82,17 +82,17 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 
 ### 2.4 递归定理
 
-下面两个问题涉及到输出，因此等价符号 $\cong$ 采取（一）注3 的定义，即输出相同或均不停机，则两个图灵机（或函数和图灵机）等价．
-
-**<font color=dodgerblue>定理 2.10</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)，亦称为第一递归定理 (the first recursion theorem)，表明，对于任意可计算函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
+**<font color=dodgerblue>定理 2.10</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)表明，对于任意可计算函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong_O\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
 
 证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Proof_of_the_fixed-point_theorem)．
 
-**<font color=dodgerblue>定理 2.11</font>** 克林递归定理 (Kleene's recursion theorem)，亦称为第二递归定理 (the second recursion theorem)，表明，对于任意偏可计算（部分可计算）函数 $t(x, y)$，存在图灵机 $\text{M}$ 使得 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x)$．
+**<font color=dodgerblue>定理 2.11</font>** 克林递归定理 (Kleene's recursion theorem)，亦称为第二递归定理 (the second recursion theorem)，表明，对于任意偏可计算（部分可计算）函数 $t(x, y)$，存在图灵机 $\text{M}$ 使得 $\text{M}(x)\cong_O{t}(\langle{\text{M} }\rangle, x)$．
 
 证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Kleene's_second_recursion_theorem)
 
-如果让 $t(x, y) \equiv x$，那么克林递归定理可以得到 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x) \equiv \langle{\text{M} }\rangle$，也即总存在一个图灵机能打印自己的序号．同样，这个序号可以改为代码，适用于计算机的 quine 程序的存在性证明．
+如果让 $t(x, y) \equiv x$，那么克林递归定理可以得到 $\text{M}(x)\cong_O{t}(\langle{\text{M} }\rangle, x) \equiv \langle{\text{M} }\rangle$，也即总存在一个图灵机能打印自己的序号．同样，这个序号可以改为代码，适用于计算机的 quine 程序的存在性证明．
+
+**<font color=dodgerblue>定理 2.11</font>** 第一递归定理 (the first recursion theorem) 指出不动点定理中不仅存在函数，还存在一个“不动最小集”
 
 ### 2.A 本节符号表
 

@@ -149,9 +149,7 @@ $$
 
 则称 $\text{M}_1, \text{M}_2$ 等价，记作 $\text{M}_1 \cong \text{M}_2$，在一些要展示参数位置的情况，可以写成 $\text{M}_1(\omega) \cong \text{M}_2(\omega)$．
 
-**<font color=dodgerblue>定理 1.15</font>** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)．
-
-**<font color=dodgerblue>定义 1.16</font>** 同样，如果定义在 $\Sigma^\ast \to \lbrace 0, 1 \rbrace$（或对应的 $\mathbb{N} \to \lbrace 0, 1 \rbrace$）上的函数 $f(x)$ 满足
+**<font color=dodgerblue>定义 1.15</font>** 同样，如果定义在 $\Sigma^\ast \to \lbrace 0, 1 \rbrace$（或对应的 $\mathbb{N} \to \lbrace 0, 1 \rbrace$）上的函数 $f(x)$ 满足
 
 $$
 \left\lbrace
@@ -165,7 +163,7 @@ $$
 
 记作 $f \cong \text{M}$ 或 $f(x) \cong \text{M}(x)$．
 
-注3：如果我们在意输出值（非判定问题），可能会需要这样的关系
+**<font color=dodgerblue>定义 1.16</font>** 如果我们在意输出值，即对于**非判定问题**，可能会需要这样的关系
 
 $$
 \left\lbrace
@@ -176,9 +174,15 @@ $$
 \right.
 $$
 
-图灵机之间的关系同理．此时，该问题与语言无关（可能是一个求解问题），不关心拒绝接受．
+为避免歧义，本文讲非判定问题的等价，称为 $\text{M}(x) \cong_O f(x)$．图灵机之间的关系同理．此时，该问题与语言无关（可能是一个求解问题），不关心拒绝接受，仅关心是否停机．
 
-**<font color=dodgerblue>定义 1.17</font>** 如果函数 $f$ 在所有字符串（自然数）上均有定义，则称 $f$ 为全函数，否则叫做偏函数．对全函数 $f$，对于判定问题，如果存在 $\text{M}(x) \cong f(x)$（或对于非判定问题，如果存在 $\text{M}(x)=f(x)$），则全函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**．
+**<font color=dodgerblue>定义 1.17</font>** 如果函数 $f$ 在所有字符串（自然数）上均有定义，则称 $f$ 为全函数 (total function)，否则称为偏函数 (partial function)．如果全函数 $f$ 存在 $\text{M}(x) \cong_O f(x)$，则全函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**；如果 $f$ 是偏函数并满足如上要求，则偏函数 $f$ 称为**偏可计算函数 (partial computable function)** 或**偏可递归函数 (partial recursive function)**．
+
+注意，对于任意一个解决判定性问题的图灵机 $\text{M}_1(x) \cong f(x)$，只需要让 $\text{M}_2(x)$ 模拟 $\text{M}_1(x)$ 的操作，并在最后在输出纸带上写下 $0$（如果拒绝）或 $1$（如果接受），即可存在对应的非判定问题图灵机 $\text{M}_2(x) \cong_O f(x)$ 指示相同的 $f(x)$．因此，1.18 中如果用 $\text{M}(x) \cong f(x)$ 定义 $f(x)$，则它实际上是用 $\text{M}(x) \cong_O f(x)$ 定义的子集（实际上是所有值域为 $\lbrace 0, 1 \rbrace$ 的 $f(x)$）．
+
+一些文献会把所有判定性问题转化为非判定问题（即输出 $0$ 和 $1$）来避免两种等价的不同．前者等价主要是为语言服务（无输出），后者主要为函数服务（输出任意）．不过这可以看作两种值域不同的等价类．
+
+**<font color=dodgerblue>定理 1.18</font>** 存在通用图灵机 $\text{U}$，对任意 $\langle{\text{M} }\rangle$ 和 $\omega$ 输入，使得 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong \text{M}(\omega)$．对 $\text{U}(\langle{\text{M} }\rangle, \omega) \cong_O \text{M}(\omega)$ 同样．参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)．
 
 ### 1.A 本节符号表
 
@@ -199,8 +203,10 @@ $$
 | $\overline{L}$ | 语言的补 |
 | $\mathbf{R}$ | 语言类 |
 | $\mathbf{co\text{-}R}$ | 语言类 $\mathbf{R}$ 的补类 |
-| $\text{M}_1(\omega) \cong \text{M}_2(\omega)$ | 图灵机之间等价 |
-| $f(x) \cong \text{M}(x)$ | 函数和图灵机等价 |
+| $\text{M}_1(\omega) \cong \text{M}_2(\omega)$ | 图灵机之间判定等价 |
+| $f(x) \cong \text{M}(x)$ | 函数和图灵机判定等价 |
+| $\text{M}_1(\omega) \cong_O \text{M}_2(\omega)$ | 图灵机之间输出等价 |
+| $f(x) \cong_O \text{M}(x)$ | 函数和图灵机输出等价 |
 
 ### 1.B 本节例子
 
@@ -214,7 +220,7 @@ $A_{\mathbb{TM} }$ 判断图灵机 $\text{M}$ 是否接受一个输入 $\omega$�
 
 证明：对角线方法，参考[链接](https://courses.cs.washington.edu/courses/cse322/04au/Lect10.pdf)．此证明方法十分重要．
 
-**<font color=dodgerblue>性质 1.18</font>** $A_{\mathbb{TM} }$ 可识别，但不可判定．
+**<font color=dodgerblue>性质 1.19</font>** $A_{\mathbb{TM} }$ 可识别，但不可判定．
 
 3，一个不可识别不可判定的例子：$\overline{A_{\mathbb{TM} }}$
 
