@@ -92,7 +92,7 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 
 如果让 $t(x, y) \equiv x$，那么克林递归定理可以得到 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x) \equiv \langle{\text{M} }\rangle$，也即总存在一个图灵机能打印自己的序号．同样，这个序号可以改为代码，适用于计算机的 quine 程序的存在性证明．
 
-**<font color=dodgerblue>定理 2.11</font>** 第一递归定理 (the first recursion theorem) 表明，
+另外，还有更强的 [第一递归定理 (the first recursion theorem)](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#The_first_recursion_theorem)．
 
 ### 2.A 本节符号表
 
