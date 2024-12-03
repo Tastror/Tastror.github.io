@@ -236,9 +236,9 @@ $$
 
 下面我们看看偏可计算函数和图灵机的关系．为方便，偏可计算函数的集合暂记为 $\mathbb{PCF}$．
 
-一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，可以构造偏函数 $f$．如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，令 $f(\omega)=\text{M}(\omega)$；如果输入不停机，则 $f$ 在 $\omega$ 上不定义．同时此 $f$ 是偏可计算的．因此，$\forall\,\text{M}\in\mathbb{TM}, \exist f\in\mathbb{PCF}, f \cong \text{M}$．
+一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，可以构造偏函数 $f$．如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，令 $f(\omega)=\text{M}(\omega)$；如果输入不停机，则 $f$ 在 $\omega$ 上不定义．同时此 $f$ 是偏可计算的．因此，$\forall\,\text{M}\in\mathbb{TM}, \exists f\in\mathbb{PCF}, f \cong \text{M}$．
 
-另一方面，由定义，$\forall f\in\mathbb{PCF}, \exist\, \text{M}\in\mathbb{TM}, \text{M} \cong f$．
+另一方面，由定义，$\forall f\in\mathbb{PCF}, \exists\, \text{M}\in\mathbb{TM}, \text{M} \cong f$．
 
 同时，可以用类似的方法证明传递性，即 $f_1 \cong \text{M}, f_2 \cong \text{M} \Rightarrow f_1 \cong f_2$，以及 $\text{M}_1 \cong f, \text{M}_2 \cong f \Rightarrow \text{M}_1 \cong \text{M}_2$．
 
