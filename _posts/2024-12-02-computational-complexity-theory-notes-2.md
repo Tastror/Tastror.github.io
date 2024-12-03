@@ -54,7 +54,7 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 - 如果属于，则模拟运行 $\text{T}(x)$
 - 如果不属于，则直接拒绝
 
-于是 $\text{M}^\texttt{HALT}(\langle\text{T}\rangle, x) \cong A_{\mathbb{TM} }(\langle\text{T}\rangle, x)$，即有 $A_{\mathbb{TM} } \leqslant_T \texttt{HALT}$，又由于 $A_{\mathbb{TM} }$ 不可判定，所以
+于是 $\text{M}^\texttt{HALT}(\langle\text{T}\rangle, x)$ 判定语言 $A_{\mathbb{TM} }(\langle\text{T}\rangle, x)$，即有 $A_{\mathbb{TM} } \leqslant_T \texttt{HALT}$，又由于 $A_{\mathbb{TM} }$ 不可判定，所以
 
 **<font color=dodgerblue>性质 2.4</font>** 语言 $\texttt{HALT}$ 不可判定．
 
@@ -82,15 +82,15 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 
 ### 2.4 递归定理
 
-**<font color=dodgerblue>定理 2.10</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)表明，对于任意**可计算**函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong_O\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
+**<font color=dodgerblue>定理 2.10</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)表明，对于任意**可计算**函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
 
-证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Proof_of_the_fixed-point_theorem)．
+证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Prooff_the_fixed-point_theorem)．
 
-**<font color=dodgerblue>定理 2.11</font>** 克林递归定理 (Kleene's recursion theorem)，亦称为第二递归定理 (the second recursion theorem)，表明，对于任意**偏可计算**函数 $t(x, y)$，存在图灵机 $\text{M}$ 使得 $\text{M}(x)\cong_O{t}(\langle{\text{M} }\rangle, x)$．
+**<font color=dodgerblue>定理 2.11</font>** 克林递归定理 (Kleene's recursion theorem)，亦称为第二递归定理 (the second recursion theorem)，表明，对于任意**偏可计算**函数 $t(x, y)$，存在图灵机 $\text{M}$ 使得 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x)$．
 
 证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Kleene's_second_recursion_theorem)
 
-如果让 $t(x, y) \equiv x$，那么克林递归定理可以得到 $\text{M}(x)\cong_O{t}(\langle{\text{M} }\rangle, x) \equiv \langle{\text{M} }\rangle$，也即总存在一个图灵机能打印自己的序号．同样，这个序号可以改为代码，适用于计算机的 quine 程序的存在性证明．
+如果让 $t(x, y) \equiv x$，那么克林递归定理可以得到 $\text{M}(x)\cong{t}(\langle{\text{M} }\rangle, x) \equiv \langle{\text{M} }\rangle$，也即总存在一个图灵机能打印自己的序号．同样，这个序号可以改为代码，适用于计算机的 quine 程序的存在性证明．
 
 **<font color=dodgerblue>定理 2.11</font>** 第一递归定理 (the first recursion theorem) 表面明，
 
