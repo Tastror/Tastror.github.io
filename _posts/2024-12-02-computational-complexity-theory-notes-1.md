@@ -99,7 +99,7 @@ TeX: {
 
 **<font color=dodgerblue>推论 1.4</font>** 自然数和图灵机一一对应．
 
-**<font color=dodgerblue>定义 1.5</font>** 本文用 $\lbrack{n}\rbrack$ 表示自然数 $n$ 对应的图灵机，$\lbrack{n}\rbrack\in\mathbb{TM}$；用 $\langle{\text{M} }\rangle$ 表示图灵机 $\text{M}$ 对应的自然数，$\langle{\text{M} }\rangle\in\mathbb{N}$．
+**<font color=dodgerblue>定义 1.5</font>** 本文用 $\text{M}_n$ 表示自然数 $n$ 对应的图灵机，$\text{M}_n\in\mathbb{TM}$；用 $\langle{\text{M} }\rangle$ 表示图灵机 $\text{M}$ 对应的自然数，$\langle{\text{M} }\rangle\in\mathbb{N}$．
 
 ### 1.3 语言
 
@@ -161,11 +161,25 @@ TeX: {
 
 **<font color=dodgerblue>推论 1.17</font>** 有无穷多的语言是不可识别且不可判定的．
 
-### 1.4 图灵机等价性与函数
+### 1.4 偏函数与图灵机等价性
 
-根据代码经验可知，有很多不同的图灵机在做相同的事情，为了描述这种现象，我们定义
+首先引入数学中的[偏函数]((https://en.wikipedia.org/wiki/Partial_function))，它是**函数的超集**，定义为
 
-**<font color=dodgerblue>定义 1.18</font>** 如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
+**<font color=dodgerblue>定义 1.18</font>** 若 $f: S \rightarrow Y$ 是映射（$S$ 可为空集），且 $S \subseteq X$，$f$ 在 $X\setminus S$ 上无定义 (not defined)，则称 $f: X \rightarrow Y$ 为偏函数 (partial function)，或称为部分函数．$X$ 称为定义域 (domain)，$S$ 称为意义域 (domain of definition)．显然，$f(x)$ 有定义当且仅当 $x \in S$．如果偏函数 $f$ 在所有定义域上均有定义，即 $S = X$，则称 $f$ 为全函数 (total function)，或简单称为函数 (function)．
+
+> 我无法想象中文把 domain 翻译为“定义域”后，该如何处理 domain of definition．我暂且翻译为“意义域”．
+
+这里最后得到的函数定义，和常规的函数定义一致．不过在某些常规定义中，定义域 $X$ 不可为空集（此处可以，略有差异）．但我们后文讨论的定义域 $X$ 均不为空集，故无影响．
+
+上面的定义即是在说，偏函数是“可在定义域 $X$ 的部分值上无定义的函数”，但要注意，不是“一定在定义域 $X$ 的部分值上无定义的函数”．也就是说，偏函数包括了函数（全函数）和一定无定义的情况（可戏称为“真偏函数”）．
+
+当然，偏函数可在全部定义域 $X$ 上无定义（即意义域 $S$ 为空集）．
+
+再次强调，**全函数 $=$ 函数 $\subseteq$ 偏函数**．后文不使用全函数这一名词，仅使用函数和偏函数．
+
+根据代码经验可知，不同的代码可以完成完全相同的工作．事实上，图灵机也是类似的，也有很多不同的图灵机在做完全相同的事情，为了描述这种现象，我们定义
+
+**<font color=dodgerblue>定义 1.19</font>** 如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
 
 $$
 \left\lbrace
@@ -178,7 +192,9 @@ $$
 
 则称 $\text{M}_1, \text{M}_2$ 等价，记作 $\text{M}_1 \cong \text{M}_2$，在一些要展示参数位置的情况，可以写成 $\text{M}_1(\omega) \cong \text{M}_2(\omega)$．
 
-**<font color=dodgerblue>定义 1.19</font>** 如果定义在 ${\Sigma^\ast} \to {\Sigma^\ast}$ 上的函数 $f(x)$ 满足
+再定义偏函数和图灵机的关系，
+
+**<font color=dodgerblue>定义 1.20</font>** 如果定义在 ${\Sigma^\ast} \to {\Sigma^\ast}$ 上的偏函数 $f(x)$ 满足
 
 $$
 \left\lbrace
@@ -189,9 +205,9 @@ $$
 \right.
 $$
 
-记作 $f \cong \text{M}$ 或 $f(x) \cong \text{M}(x)$．
+则称 $f, \text{M}$ 等价，记作 $f \cong \text{M}$ 或 $f(x) \cong \text{M}(x)$．
 
-**<font color=dodgerblue>定义 1.20</font>** 如果定义在 ${\Sigma^\ast} \to {\Sigma^\ast}$ 上的函数 $f_1(x), f_2(x)$ 满足
+**<font color=dodgerblue>定义 1.21</font>** 如果定义在 ${\Sigma^\ast} \to {\Sigma^\ast}$ 上的偏函数 $f_1(x), f_2(x)$ 满足
 
 $$
 \left\lbrace
@@ -202,25 +218,33 @@ $$
 \right.
 $$
 
-记作 $f_1 \cong f_2$ 或 $f_1(x) \cong f_2(x)$．
+则称 $f_1, f_2$ 等价，记作 $f_1 \cong f_2$ 或 $f_1(x) \cong f_2(x)$．
 
-与推论 1.2 类似，以上的输入和输出都可以是多参数 ${\lbrace\Sigma^\ast \cup \mathbb{N}\rbrace}^{k_1} \to {\lbrace\Sigma^\ast \cup \mathbb{N}\rbrace}^{k_2}$．
+与推论 1.2 类似，以上的输入和输出都可以是多参数 ${\lbrace\Sigma^\ast \cup \mathbb{N}\rbrace}^{k_1} \to {\lbrace\Sigma^\ast \cup \mathbb{N}\rbrace}^{k_2}$ 的．
 
-**<font color=dodgerblue>定义 1.21</font>** 可在部分输入上无定义的函数 $f$ 称为偏函数 (partial function)，如果函数 $f$ 在所有输入上均有定义，则称 $f$ 为全函数 (total function)．
+**<font color=dodgerblue>定义 1.22</font>** 对于偏函数 $f$，如果存在 $\text{M}$ 使得 $\text{M} \cong f$，则偏函数 $f$ 称为**偏可计算 (partial computable)** 或**偏可递归 (partial recursive)** 的；如果 $\text{M}$ 一定停机，则偏函数 $f$ 称为**可计算 (computable)** 或**可递归 (recursive)** 的．偏可计算、偏可递归也可称为部分可计算、部分可递归．
 
-注意，本文中，偏函数的定义是“可在部分输入上无定义”，而不是“一定在部分输入无定义”．因此偏函数包括了全函数和一定无定义情况（可戏称为“真偏函数”），全函数是一种特殊的偏函数．
+由于图灵机一定停机，说明与其等价的 $f$ 在所有输入上有定义，也即，
 
-**<font color=dodgerblue>定义 1.22</font>** 对于偏函数 $f$，如果存在 $\text{M}$ 使得 $\text{M} \cong f$，则称函数 $f$ 称为**偏可计算函数 (partial computable function)** 或**偏可递归函数 (partial recursive function)**；如果 $f$ 是全函数，则函数 $f$ 称为**可计算函数 (computable function)** 或**可递归函数 (recursive function)**．
+**<font color=dodgerblue>推论 1.23</font>** 若偏函数 $f$ 可计算，则 $f$ 是函数．
 
-可以看到，可计算函数就是图灵机一定不停机的情况．也有文献将后者称为“全可计算函数”或“全可递归函数”，但为了和语言的定义统一，本文不添加“全”字．．
+与语言的定义进行对比，偏函数的可计算性和语言的可计算性是类似的，都需要存在一个不停机的图灵机，和它等价或判定它．但是偏函数的偏可计算性与语言的可识别性稍有不同．可识别语言如果包含 $x$，则必须接受；如果不包含 $x$，对应的图灵机在 $x$ 上可以拒绝或不停机．偏可计算函数如果在 $x$ 上有定义，输出必须相同；如果无定义，它对应的图灵机也必须在 $x$ 上不停机．
 
-与语言的定义进行对比，函数的可计算性和语言的可计算性是类似的，都需要存在一个不停机的图灵机，和它等价或判定它．但是函数的偏可计算性与语言的可识别性稍有不同．可识别语言如果包含 $x$，则必须接受；如果不包含 $x$，对应的图灵机在 $x$ 上可以拒绝或不停机．偏可计算函数如果在 $x$ 上有定义，输出必须相同；如果无定义，它对应的图灵机也必须在 $x$ 上不停机．
+和语言的结论一样，由于偏函数是 ${\Sigma^\ast} \to {\Sigma^\ast}$ 的，其势为 ${\aleph_0}^{\aleph_0} = \aleph_1$，因而也有结论
 
-和语言的结论一样，由于函数是 ${\Sigma^\ast} \to {\Sigma^\ast}$ 的，其势为 ${\aleph_0}^{\aleph_0} = \aleph_1$，因而也有结论
+**<font color=dodgerblue>推论 1.23</font>** 有无穷多的偏函数不是偏可计算的，亦不是可计算的．
 
-**<font color=dodgerblue>推论 1.23</font>** 有无穷多的函数不是偏可计算的，亦不是可计算的．
+下面我们看看偏可计算函数和图灵机的关系．为方便，偏可计算函数的集合暂记为 $\mathbb{PCF}$．
 
-一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，可以构造 $f(\omega)=\text{M}(\omega)$，如果输入不停机则不定义，则有 $f \cong \text{M}$．另一方面，我们定义只有能找到 $\text{M} \cong f$ 的 $f$ 才是偏可计算的，于是，任何一个图灵机对应于一个偏可计算函数，任何一个偏可计算函数对应于一个图灵机．即
+一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，可以构造偏函数 $f$．如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，令 $f(\omega)=\text{M}(\omega)$；如果输入不停机，则 $f$ 在 $\omega$ 上不定义．同时此 $f$ 是偏可计算的．因此，$\forall\,\text{M}\in\mathbb{TM}, \exist f\in\mathbb{PCF}, f \cong \text{M}$．
+
+另一方面，由定义，$\forall f\in\mathbb{PCF}, \exist\, \text{M}\in\mathbb{TM}, \text{M} \cong f$．
+
+同时，可以用类似的方法证明传递性，即 $f_1 \cong \text{M}, f_2 \cong \text{M} \Rightarrow f_1 \cong f_2$，以及 $\text{M}_1 \cong f, \text{M}_2 \cong f \Rightarrow \text{M}_1 \cong \text{M}_2$．
+
+我们考虑图灵机关于等价运算 $\cong$ 的[商集](https://en.wikipedia.org/wiki/Equivalence_class) $\mathbb{TM}\;/\cong$，和偏可计算函数关于等价的商集 $\mathbb{PCF}\;/\cong$．其每个等价类用代表元分别记为集合 $\lbrack\text{M}\rbrack\in\left(\mathbb{TM}\;/\cong\right)$ 和集合 $\lbrack{f}\rbrack\in\left(\mathbb{PCF}\;/\cong\right)$．
+
+如果 $f \cong \text{M}$，由于等价类中的输出和停机完全相同，因此，$\forall\,\text{M}'\in\lbrack\text{M}\rbrack, \forall f'\in\lbrack{f}\rbrack$，有 $f'\cong \text{M}'$．此时我们称 $\lbrack{f}\rbrack \cong \lbrack\text{M}\rbrack$．再结合上述论断，易知，图灵机等价商集与偏可计算函数等价商集，可以通过等价运算一一对应．或简称为，
 
 **<font color=dodgerblue>定理 1.24</font>** 图灵机与偏可计算函数等价．
 
@@ -238,7 +262,7 @@ $$
 | $\text{M}(\omega)\uparrow$ | 图灵机 $\text{M}$ 在输入 $\omega$ 时不停机 |
 | $\text{M}(\omega) = \sigma$ | 图灵机 $\text{M}$ 在停机时输出 $\sigma$ |
 | $\text{M}\left(\omega_1, \omega_2, \dots, \omega_n\right)$ | 图灵机 $\text{M}$ 以 $\omega_1, \omega_2, \dots, \omega_n$ 作为输入 |
-| $\lbrack{n}\rbrack$ | 自然数 $n$ 对应的图灵机 |
+| $\text{M}_n$ | 自然数 $n$ 对应的图灵机 |
 | $\langle{\text{M} }\rangle$ | 图灵机 $\text{M}$ 对应的自然数 |
 | $\mathbb{L}$ | 语言集合 |
 | $L$ | 语言 |
