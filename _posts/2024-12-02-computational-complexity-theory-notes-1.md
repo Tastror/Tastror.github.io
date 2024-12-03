@@ -163,7 +163,7 @@ TeX: {
 
 ### 1.4 图灵机等价性与函数
 
-有很多不同的图灵机在做相同的事情，为了描述这种现象，我们定义
+根据代码经验可知，有很多不同的图灵机在做相同的事情，为了描述这种现象，我们定义
 
 **<font color=dodgerblue>定义 1.18</font>** 如果两个图灵机 $\text{M}_1, \text{M}_2\in\mathbb{TM}$ 对任何 $\omega$ 作为输入，都有
 
@@ -220,9 +220,9 @@ $$
 
 **<font color=dodgerblue>推论 1.23</font>** 有无穷多的函数不是偏可计算的，亦不是可计算的．
 
-一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，可以构造 $f(\omega)=\text{M}(\omega)$，如果输入不停机则不定义，则有 $f \cong \text{M}$．另一方面，我们定义只有能找到 $\text{M} \cong f$ 的 $f$ 才是偏可计算的，于是，
+一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，可以构造 $f(\omega)=\text{M}(\omega)$，如果输入不停机则不定义，则有 $f \cong \text{M}$．另一方面，我们定义只有能找到 $\text{M} \cong f$ 的 $f$ 才是偏可计算的，于是，任何一个图灵机对应于一个偏可计算函数，任何一个偏可计算函数对应于一个图灵机．即
 
-**<font color=dodgerblue>定理 1.24</font>** 图灵机与偏可计算函数等价
+**<font color=dodgerblue>定理 1.24</font>** 图灵机与偏可计算函数等价．
 
 最后，参考[链接](https://en.wikipedia.org/wiki/UTM_theorem)，我们可以证明存在一个通用图灵机，即
 
