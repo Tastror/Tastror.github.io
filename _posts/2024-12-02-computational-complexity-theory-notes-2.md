@@ -82,6 +82,8 @@ $\text{M}^B$ 判定语言 $A$，也即用 $B$ 的结论解决 $A$，直观上说
 
 ### 2.4 递归定理
 
+在本节的最后，我们介绍几个比较重要的定理．
+
 **<font color=dodgerblue>定理 2.10</font>** 罗杰斯不动点定理 (Rogers's fixed-point theorem)表明，对于任意**可计算**函数 $f(x)$，存在图灵机 $\text{M}$ 使得 $\text{M}\cong\lbrack{f}(\langle{\text{M} }\rangle)\rbrack$．
 
 证明：参考[此链接](https://en.wikipedia.org/wiki/Kleene%27s_recursion_theorem#Prooff_the_fixed-point_theorem)．
