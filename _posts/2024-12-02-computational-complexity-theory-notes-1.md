@@ -247,8 +247,7 @@ $$
 | $\overline{L}$ | 语言的补 |
 | $\mathbf{R}$ | 语言类 |
 | $\mathbf{co\text{-}R}$ | 语言类 $\mathbf{R}$ 的补类 |
-| $\text{M}_1(\omega) \cong \text{M}_2(\omega)$ | 图灵机之间等价 |
-| $f(x) \cong \text{M}(x)$ | 函数和图灵机等价 |
+| $f(x) \cong \text{M}(x)$ | 等价关系 |
 
 ### 1.B 本节例子
 
