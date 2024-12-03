@@ -206,7 +206,7 @@ $$
 
 与推论 1.2 类似，以上的输入和输出都可以是多参数 ${\lbrace\Sigma^\ast \cup \mathbb{N}\rbrace}^{k_1} \to {\lbrace\Sigma^\ast \cup \mathbb{N}\rbrace}^{k_2}$．
 
-**<font color=dodgerblue>定义 1.21</font>** 可在部分输入上无定义的函数 $f$ 称为偏函数 (partial function)，如果函数 $f$ 在所有字符串上均有定义，则称 $f$ 为全函数 (total function)．
+**<font color=dodgerblue>定义 1.21</font>** 可在部分输入上无定义的函数 $f$ 称为偏函数 (partial function)，如果函数 $f$ 在所有输入上均有定义，则称 $f$ 为全函数 (total function)．
 
 注意，本文中，偏函数的定义是“可在部分输入上无定义”，而不是“一定在部分输入无定义”．因此偏函数包括了全函数和一定无定义情况（可戏称为“真偏函数”），全函数是一种特殊的偏函数．
 
