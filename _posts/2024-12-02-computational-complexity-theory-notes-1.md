@@ -165,15 +165,15 @@ TeX: {
 
 首先引入数学中的[偏函数]((https://en.wikipedia.org/wiki/Partial_function))，它是**函数的超集**，定义为
 
-**<font color=dodgerblue>定义 1.18</font>** 若 $f: S \rightarrow Y$ 是映射（$S$ 可为空集），且 $S \subseteq X$，$f$ 在 $X\setminus S$ 上无定义 (not defined)，则称 $f: X \rightarrow Y$ 为偏函数 (partial function)，或称为部分函数．$X$ 称为定义域 (domain)，$S$ 称为意义域 (domain of definition)．显然，$f(x)$ 有定义当且仅当 $x \in S$．如果偏函数 $f$ 在所有定义域上均有定义，即 $S = X$，则称 $f$ 为全函数 (total function)，或简单称为函数 (function)．
+**<font color=dodgerblue>定义 1.18</font>** 若 $f: S \rightarrow Y$ 是映射，$S$ 可为空集，取 $S$ 的超集 $X$，$S \subseteq X$，$f$ 在 $X\setminus S$ 上无意义<sup>见下注释</sup> (not defined) ，则称 $f: X \rightarrow Y$ 为偏函数 (partial function)，或称为部分函数．$X$ 沿用函数的叫法称为定义域 (domain)，$S$ 称为意义域<sup>见下注释</sup> (domain of definition)．显然，$f(x)$ 有意义当且仅当 $x \in S$．如果偏函数 $f$ 在所有定义域上均有意义，即 $S = X$，则称 $f$ 为全函数 (total function)，或简单称为函数 (function)．
 
-> 我无法想象中文把 domain 翻译为“定义域”后，该如何处理 domain of definition．我暂且翻译为“意义域”．
+> 中文中 domain 翻译为“定义域”，与英文采取的方式不同，因此 domain of definition 不能简单翻译为“定义的定义域”，我暂且翻译为“意义域”（并非官方翻译）．not defined 也因此称为“无意义”（而非“无定义”，否则“定义域内无定义”在文字上自相矛盾）．
 
 这里最后得到的函数定义，和常规的函数定义一致．不过在某些常规定义中，定义域 $X$ 不可为空集（此处可以，略有差异）．但我们后文讨论的定义域 $X$ 均不为空集，故无影响．
 
-上面的定义即是在说，偏函数是“可在定义域 $X$ 的部分值上无定义的函数”，但要注意，不是“一定在定义域 $X$ 的部分值上无定义的函数”．也就是说，偏函数包括了函数（全函数）和一定无定义的情况（可戏称为“真偏函数”）．
+上面的定义即是在说，偏函数是“可能在定义域 $X$ 的部分值上无意义的函数”，但要注意，不是“一定在定义域 $X$ 的部分值上无意义的函数”．也就是说，偏函数包括了函数（全函数）和存在某些无意义值的情况（可称为“真偏函数”）．
 
-当然，偏函数可在全部定义域 $X$ 上无定义（即意义域 $S$ 为空集）．
+当然，偏函数可在全部定义域 $X$ 上无意义（即意义域 $S$ 为空集）．
 
 再次强调，**全函数 $=$ 函数 $\subseteq$ 偏函数**．后文不使用全函数这一名词，仅使用函数和偏函数．
 
