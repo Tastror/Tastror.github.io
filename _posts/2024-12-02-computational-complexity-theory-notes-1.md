@@ -115,7 +115,7 @@ TeX: {
 
 根据语言的定义，可知
 
-**<font color=dodgerblue>推论 1.8</font>** $\mathbb{L}$ 是 $\Sigma^\ast$ 的幂集，即 $\mathbb{L} = 2^{\Sigma^\ast}$，它的势 $\left\vert\mathbb{L}\right\vert = \aleph_1$．
+**<font color=dodgerblue>推论 1.8</font>** $\mathbb{L}$ 是 $\Sigma^\ast$ 的幂集，即 $\mathbb{L} = 2^{\Sigma^\ast}$，它的势 $\left\vert\mathbb{L}\right\vert = 2^{\aleph_0} \left(= \mathfrak{c}\right)$<sup><a href="https://math.stackexchange.com/questions/270671/easiest-way-to-prove-that-2-aleph-0-c">proof</a></sup>．
 
 为了增加更多可以描述的性质，我们给出补集的表示．
 
@@ -157,7 +157,7 @@ TeX: {
 - $L$ 可识别且可识别补集 $\Leftrightarrow$ $L$ 可判定 $\Leftrightarrow$ $L$ 可判定补集
 - $L$ 不可识别或不可识别补集 $\Leftrightarrow$ $L$ 不可判定 $\Leftrightarrow$ $L$ 不可判定补集
 
-最后，由于 $\left\vert\mathbb{L}\right\vert = \aleph_1 \gg \aleph_0 = \left\vert\mathbb{TM}\right\vert$，而一种图灵机最多只能识别、判定一种语言，所以
+最后，由于 $\left\vert\mathbb{L}\right\vert = \mathfrak{c} \gg \aleph_0 = \left\vert\mathbb{TM}\right\vert$，而一种图灵机最多只能识别、判定一种语言，所以
 
 **<font color=dodgerblue>推论 1.17</font>** 有无穷多的语言是不可识别且不可判定的．
 
@@ -230,13 +230,13 @@ $$
 
 与语言的定义进行对比，**偏函数的可计算性**和**语言的可计算性**是类似的，都需要存在一个不停机的图灵机，和它等价或判定它．但是**偏函数的偏可计算性**与**语言的可识别性**稍有不同．可识别语言如果包含 $x$，则必须接受；如果不包含 $x$，对应的图灵机在 $x$ 上可以拒绝或不停机．偏可计算函数如果在 $x$ 上有定义，输出必须相同；如果无定义，它对应的图灵机也必须在 $x$ 上不停机．
 
-和语言的结论一样，由于偏函数是 ${\Sigma^\ast} \to {\Sigma^\ast}$ 的，其势为 ${\aleph_0}^{\aleph_0} = \aleph_1$，因而也有结论
+和语言的结论一样，由于偏函数是 ${\Sigma^\ast} \to {\Sigma^\ast}$ 的，其势为 ${\aleph_0}^{\aleph_0}\left( = 2^{\aleph_0}\right)$<sup><a href="https://math.stackexchange.com/questions/110211/is-aleph-0-aleph-0-smaller-than-or-equal-to-2-aleph-0">proof</a></sup>，因而也有结论
 
 **<font color=dodgerblue>推论 1.23</font>** 有无穷多的偏函数不是偏可计算的，亦不是可计算的．
 
 下面我们看看偏可计算函数和图灵机的关系．为方便，偏可计算函数的集合暂记为 $\mathbb{PCF}$．
 
-一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，可以构造偏函数 $f$．如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，令 $f(\omega)=\text{M}(\omega)$；如果输入不停机，则 $f$ 在 $\omega$ 上不定义．同时此 $f$ 是偏可计算的．因此，$\forall\,\text{M}\in\mathbb{TM}, \exists f\in\mathbb{PCF}, f \cong \text{M}$．
+一方面，任何图灵机都或者输出或者不停机，因此对于任何图灵机 $\text{M}$，可以构造偏函数 $f$．如果输入 $\omega$ 满足 $\text{M}(\omega)\downarrow$，令 $f(\omega)=\text{M}(\omega)$；如果输入不停机，令 $f$ 在 $\omega$ 上无意义（not defined）．同时此 $f$ 是偏可计算的．因此，$\forall\,\text{M}\in\mathbb{TM}, \exists f\in\mathbb{PCF}, f \cong \text{M}$．
 
 另一方面，由定义，$\forall f\in\mathbb{PCF}, \exists\, \text{M}\in\mathbb{TM}, \text{M} \cong f$．
 
