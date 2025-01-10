@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "POSIX Shell 正则与类正则语法"
+title: "POSIX Shell 正则与通配符语法"
 date: 2024-12-03 21:24:00 +0800
 categories: 计算机
 ---
