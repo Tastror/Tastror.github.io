@@ -44,7 +44,7 @@ POSIX BRE 和 ERE 的特征可以参考链接 <https://www.regular-expressions.i
 - `?` 在正则中代表将前一个符号重复 0/1 次；而在通配符中代表任何一个单独字符。粗略类似正则的 `"."`，同样考虑换行可以类似正则的 `"[[:print:]]"` (BRE, ERE, PCRE) 或 `"(\S|\s)"` (ERE, PCRE)、`"[\S\s]"` (PCRE)。
 - `[]` 和正则几乎相同。但是反选形如 `[!abc]`，而正则形如 `[^abc]`。
 
-## 一、正则相关软件
+## 一、正则相关命令
 
 主要介绍 `grep`、`find`、`sed`、`awk`。
 
@@ -131,7 +131,7 @@ find "文件夹1" "文件夹2" ... "文件夹n" \( -name "BRE规则1" -or -name 
 
 处理文本内容（编辑性），TBD
 
-## 二、POSIX shell 通配符语法
+## 二、POSIX shell 通配符相关命令
 
 ### i. 通配符语法
 
