@@ -10,7 +10,7 @@ categories: 计算机
 
 > 需要学习的内容：PCRE, ERE, BRE, 通配符
 
-### shell 兼容性
+### i. shell 兼容性
 
 POSIX shell、Bourne Shell (`sh`) compatible、Unix shell
 
@@ -18,7 +18,7 @@ POSIX shell、Bourne Shell (`sh`) compatible、Unix shell
 - POSIX shell：符合 POSIX 规范中对 shell 的规定，这样的 shell 称为 POSIX shell（例如 `sh`, `bash`, `zsh`；但 `csh` `fish` 不遵循）。
 - Bourne Shell (`sh`) compatible：兼容 `sh` 语法的 shell（例如 `sh`, `bash`, `zsh`；但 `csh` `fish` 不兼容），与 POSIX shell 类似（因为 POSIX 规范的 shell 规则基于原始 `sh`），因此它基本上和 POSIX shell 等价。但是 POSIX shell 的指代更加明确，因此一般会考虑 shell 是否遵循 POSIX。
 
-### 正则表达式
+### ii. 正则表达式
 
 正则表达式、正则 (regular expression, regexp, regex, RE, re)，是一个用于字符串模式匹配的表述规则，在各个编程语言以及各个软件中都十分常用。POSIX 有 Basic RE (BRE) 和 Extended RE (ERE) 两套标准，现代正则一般采用 PCRE 标准，以及其相关的各种兼容性衍生标准（Python, Java, JS 等）。
 
@@ -34,7 +34,7 @@ POSIX shell、Bourne Shell (`sh`) compatible、Unix shell
 
 其中，BRE 中**部分**元字符 (metacharacter) `"()"`、`"{}"`、`"+"`、`"?"`、`"|"` 需要转义，也就是直接输入 `"a{2}"` 会匹配真正的 `"a{2}"` 文本，只有 `"a\{2\}"` 会匹配 `"aa"`；但是另一些元字符 `"[]"`、`"."`、`"*"` 则不需要转义，例如 `"[ab]c"` 可以直接匹配 `"ac"` 与 `"bc"`。而 ERE 基本上都不需要转义，和 PCRE 更类似。
 
-### 通配符
+### iii. 通配符
 
 通配符 (wildcard) **不是正则表达式**。尽管它也使用 `? * []` 这些和正则很类似的符号，但它和正则的含义不同。
 
@@ -167,13 +167,13 @@ echo '${a}'
 
 ### ii.变量存在性
 
-参考 <https://handerfly.github.io/shell/2019/04/03/shell%E7%BC%96%E7%A8%8B%E5%86%92%E5%8F%B7%E5%8A%A0-%E7%AD%89%E5%8F%B7-%E5%8A%A0%E5%8F%B7-%E5%87%8F%E5%8F%B7-%E9%97%AE%E5%8F%B7/>。
+参考 [shell 编程：冒号 后面跟 等号，加号，减号，问号的意义](https://handerfly.github.io/shell/2019/04/03/shell%E7%BC%96%E7%A8%8B%E5%86%92%E5%8F%B7%E5%8A%A0-%E7%AD%89%E5%8F%B7-%E5%8A%A0%E5%8F%B7-%E5%87%8F%E5%8F%B7-%E9%97%AE%E5%8F%B7/)
 
 ```shell
-echo ${a:-string}
-echo ${a:=string}
-echo ${a:+string}
-echo ${a:?string}
+echo ${a:-string}  # == ENV_DICT.get(a, "string")
+echo ${a:=string}  # == ENV_DICT.setdefault(a, "string")
+echo ${a:+string}  # == if (ENV_DICT.exist(a)) then { ENV_DICT[a] = "string"; "string" } else { "" }
+echo ${a:?string}  # == try: ENV_DICT[a]; except: raise "string"
 ```
 
 ### iii.变量修改
