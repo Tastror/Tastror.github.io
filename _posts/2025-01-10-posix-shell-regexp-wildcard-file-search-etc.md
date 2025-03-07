@@ -172,7 +172,7 @@ echo '${a}'
 ```shell
 echo ${a:-string}  # == ENV_DICT.get(a, "string")
 echo ${a:=string}  # == ENV_DICT.setdefault(a, "string")
-echo ${a:+string}  # == if (ENV_DICT.exist(a)) then { ENV_DICT[a] = "string"; "string" } else { "" }
+echo ${a:+string}  # == "string" if ENV_DICT.exist(a) else ""
 echo ${a:?string}  # == try: ENV_DICT[a]; except: raise "string"
 ```
 
